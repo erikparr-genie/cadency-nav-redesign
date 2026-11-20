@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cadency, organized around the work</title>
+<style>
+:root{--ink:#0f172a;--ink2:#334155;--ink3:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--blue:#065bf9;--blue-soft:#e8f0fd;--teal:#13766f;--teal-soft:#d5f0ec;--grey-soft:#eef1f5;--amber:#b45309;--amber-soft:#fef3c7;--purple:#6d28d9;--purple-soft:#ede9fe}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.45 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+section.slide{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;padding:52px 72px 56px;position:relative}
+.slide .n{position:absolute;top:26px;right:72px;font-size:13px;color:var(--ink3);letter-spacing:.04em}
+h1{font-size:60px;line-height:1.05;margin:0 0 20px;letter-spacing:-.02em;max-width:18ch}
+h2{font-size:38px;line-height:1.12;margin:0 0 10px;letter-spacing:-.015em;max-width:26ch}
+.lead{font-size:20px;color:var(--ink2);max-width:64ch;margin:0 0 24px}
+.kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:12px}
+.grow{flex:1;display:flex;flex-direction:column;justify-content:center}
+.cols{display:grid;gap:24px}
+.c2{grid-template-columns:1fr 1fr}.c3{grid-template-columns:1fr 1fr 1fr}.c4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+.card h3{margin:0 0 8px;font-size:18px}
+.card p{margin:0;color:var(--ink2);font-size:16px}
+.stat{font-size:42px;font-weight:700;letter-spacing:-.02em;line-height:1}
+.stat small{display:block;font-size:15px;font-weight:500;color:var(--ink3);margin-top:8px;letter-spacing:0;line-height:1.3}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 6px}
+.tab{padding:9px 14px;border-radius:8px;border:1.5px solid #94a3b8;background:#fff;font-weight:600;font-size:15px;color:var(--ink2)}
+.tab.dim{border-style:dashed;color:var(--ink3);font-weight:500}
+.tab.sub{background:var(--grey-soft);border-color:#cbd5e1;color:var(--ink2);font-weight:500}
+.tab.hid{background:var(--amber-soft);border-color:#d97706;color:#92400e}
+.area{padding:10px 14px;border-radius:8px;background:var(--blue-soft);border:1.5px solid var(--blue);color:#0b3aa6;font-weight:600;font-size:15px}
+.area.t{background:var(--teal-soft);border-color:var(--teal);color:#0d4f4a}
+.area.p{background:var(--purple-soft);border-color:var(--purple);color:#4c1d95}
+.area.g{background:var(--grey-soft);border-color:#94a3b8;color:var(--ink2)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.who{font-size:16px;font-weight:600;color:var(--ink);margin:18px 0 8px}
+.who:first-child{margin-top:0}
+.who span{font-weight:500;color:var(--ink3)}
+.keyline{font-size:14px;color:var(--ink3);margin-top:14px}
+.keyline i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin:0 4px 0 12px}
+.arrow{color:var(--ink3);font-size:22px;padding:0 6px}
+table.mx{border-collapse:separate;border-spacing:4px;font-size:14px;margin-top:4px}
+table.mx th{font-weight:600;color:var(--ink2);text-align:center;padding:4px 2px;white-space:nowrap;font-size:13px}
+table.mx th.r{text-align:left;padding-right:8px;font-size:14px}
+table.mx td{width:66px;height:40px;text-align:center;border-radius:6px;background:#f1f5f9;color:#94a3b8;font-variant-numeric:tabular-nums}
+table.mx td.v1{background:#e2e8f0;color:var(--ink2)}table.mx td.v2{background:#cbd5e1;color:var(--ink);font-weight:600}table.mx td.v3{background:#475569;color:#fff;font-weight:700}
+table.mx td.rm{background:var(--amber-soft);color:#92400e}
+table.mx td.tot,table.mx th.tot{background:none;color:var(--ink3);font-weight:600}
+.before-after{display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:start}
+.path{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0}
+.path .lbl{width:88px;font-size:14px;color:var(--ink3);font-weight:600}
+.path .step{padding:7px 11px;border-radius:7px;background:#fff;border:1.5px solid #94a3b8;font-size:14px;font-weight:600;color:var(--ink2)}
+.path .step.t{background:var(--teal-soft);border-color:var(--teal);color:#0d4f4a}
+.path .sum{font-size:14px;color:var(--ink3);margin-left:6px}
+.one{display:grid;grid-template-columns:1fr auto auto auto;gap:8px 14px;align-items:center;font-size:16px;margin-top:10px}
+.one .l{color:var(--ink2)}.one b{font-variant-numeric:tabular-nums;text-align:right}
+.one .to{color:var(--ink3)}
+.chip{display:inline-block;padding:3px 9px;border-radius:6px;font-size:13px;font-weight:600}
+.chip.p{background:var(--purple-soft);color:#4c1d95}.chip.t{background:var(--teal-soft);color:#0d4f4a}
+.quote{border-left:3px solid var(--blue);padding:4px 0 4px 16px;color:var(--ink2);font-size:16px;margin:10px 0}
+.quote span{display:block;font-size:13px;color:var(--ink3);margin-top:4px}
+.persona{border-top:4px solid var(--blue)}
+.persona.m{border-top-color:var(--teal)}.persona.a{border-top-color:var(--purple)}
+.persona .q{font-size:19px;font-weight:600;margin:4px 0 10px;letter-spacing:-.01em}
+.persona ul{margin:8px 0 0 18px;padding:0;color:var(--ink2);font-size:15.5px}
+.persona li{margin:5px 0}
+ol.decide{margin:0;padding-left:22px;font-size:18px}
+ol.decide li{margin:12px 0;color:var(--ink2)}ol.decide li b{color:var(--ink)}
+.foot{margin-top:auto;padding-top:22px;display:flex;gap:18px;align-items:center;font-size:13.5px;color:var(--ink3);flex-wrap:wrap}
+.foot a{color:var(--blue);text-decoration:none;border-bottom:1px solid #93c5fd}
+.dots{position:fixed;right:22px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:9px;z-index:5}
+.dots a{width:9px;height:9px;border-radius:50%;background:#cbd5e1;display:block}
+.dots a.on{background:var(--blue)}
+.hint{position:fixed;left:72px;bottom:16px;font-size:12px;color:var(--ink3);z-index:5}
+.ask{background:var(--ink);color:#fff;border-radius:14px;padding:26px 30px}
+.ask h3{margin:0 0 8px;font-size:22px}.ask p{margin:0;color:#cbd5e1;font-size:17px}
+@media (max-width:900px){section.slide{padding:40px 16px 56px}h1{font-size:40px}h2{font-size:28px}.c2,.c3,.c4,.before-after{grid-template-columns:1fr}.hint,.dots{display:none}.slide .n{right:16px}}
+@media print{section.slide{min-height:auto;page-break-after:always}.dots,.hint{display:none}}
+</style>
+</head>
+<body>
+<nav class="dots" aria-label="Slides"><a href="#s1" class="on"></a><a href="#s2"></a><a href="#s3"></a><a href="#s4"></a><a href="#s5"></a><a href="#s6"></a><a href="#s7"></a></nav>
+<div class="hint" id="hint">↓ or → for the next slide</div>
+
+<section class="slide" id="s1">
+  <div class="n">1 / 7</div>
+  <div class="grow">
+    <div class="kicker">Cadency navigation redesign · Nov 20, 2026</div>
+    <h1>Cadency, organized around the work.</h1>
+    <p class="lead">Today's navigation mirrors modules and permissions. This proposal regroups every screen Cadency has around what accountants, managers and administrators are trying to do. No screen is invented except one: Home.</p>
+    <div class="row">
+      <span class="area">Home</span><span class="area">Reconciliations</span><span class="area">Matching</span><span class="area">Journal Entries</span><span class="area">Close</span><span class="area t">Compliance</span><span class="area t">Reports</span><span class="area t">Management</span><span class="area p">Settings</span>
+    </div>
+    <div class="keyline"><i style="background:var(--blue-soft);border:1.5px solid var(--blue)"></i>daily work <i style="background:var(--teal-soft);border:1.5px solid var(--teal)"></i>oversight and controls <i style="background:var(--purple-soft);border:1.5px solid var(--purple)"></i>setup</div>
+  </div>
+  <div class="foot"><span>Built from the current-state sitemap (577 boxes, 560 of them menu items), Pendo usage, the dashboard research (Nov 19) and the UX assessment (Sep).</span></div>
+</section>
+
+<section class="slide" id="s2">
+  <div class="n">2 / 7</div>
+  <div class="grow">
+  <div class="kicker">Today</div>
+  <h2>People navigate the product's history, not their work.</h2>
+  <p class="lead">Four modules, each with its own menus, plus two tabs that are not customer features. The screens a person needs for one job are spread across modules, and setup screens outnumber work screens.</p>
+  <div class="tabs">
+    <span class="tab">Match</span><span class="tab">Certification</span><span class="tab">Compliance</span><span class="tab hid">Disclosure Management</span><span class="tab hid">Workday</span><span class="tab dim">Beacon</span><span class="tab dim">Help</span><span class="arrow">+</span><span class="tab">Close <span style="font-weight:500;color:var(--ink3)">· opens from the R2R Console</span></span>
+  </div>
+  <div class="cols c4" style="margin-top:20px">
+    <div class="card"><div class="stat">0<small>top-level tabs for Journal Entry. It lives in Certification's side menu, yet its dashboard is in the top usage tier.</small></div></div>
+    <div class="card"><div class="stat">19<small>places to manage users, spread over every module and the user menu</small></div></div>
+    <div class="card"><div class="stat">11<small>entry points to Reports, scattered across the modules</small></div></div>
+    <div class="card"><div class="stat">326<small>of 560 menu items are setup: configuration, rules, reference data, imports, security, filed inside the work modules</small></div></div>
+  </div>
+  <div class="cols c2" style="margin-top:22px">
+    <div class="quote">A user can arrive in Close when the work they need is in Certification. Users move between different views to bring together their tasks, reconciliations and progress.<span>Cadency Dashboard Research, Nov 19, 2026</span></div>
+    <div class="quote">To see what's due, complete or at risk, managers have to hunt across multiple screens. Filters and search results don't persist, and related information is split across separate views.<span>Cadency UX Assessment, Sep 2026</span></div>
+  </div>
+  </div>
+  <div class="foot"><span>Counts come from the current-state sitemap captured from UAT in Sep and Oct 2026. Amber tabs are not customer features, per the product team.</span></div>
+</section>
+
+<section class="slide" id="s3">
+  <div class="n">3 / 7</div>
+  <div class="grow">
+  <div class="kicker">Proposal</div>
+  <h2>Nine areas, grouped by who they serve.</h2>
+  <p class="lead">The same screens, regrouped. Nine areas in total, but nobody uses all nine: the five blue areas are the accountant's, a manager lives in Management and Reports, an administrator in Settings.</p>
+  <div class="before-after">
+    <div class="card">
+      <div class="who">Today <span>· four modules, each with its own menu</span></div>
+      <div class="row"><span class="tab">Match</span><span class="tab">Certification</span><span class="tab">Compliance</span><span class="tab sub">Close · via the R2R Console</span><span class="tab hid">Disclosure Mgmt</span><span class="tab hid">Workday</span><span class="tab dim">Beacon</span><span class="tab dim">Help</span></div>
+      <div class="who">Inside Certification's side menu</div>
+      <div class="row"><span class="tab sub">Journal Entries</span><span class="tab sub">QA</span><span class="tab sub">Management</span></div>
+      <div class="who">Inside the user menu</div>
+      <div class="row"><span class="tab sub">Admin</span><span class="tab sub">Reports</span></div>
+    </div>
+    <div class="arrow" style="align-self:center">→</div>
+    <div class="card">
+      <div class="who">Daily work <span>· accountant</span></div>
+      <div class="row"><span class="area">Home</span><span class="area">Reconciliations</span><span class="area">Matching</span><span class="area">Journal Entries</span><span class="area">Close</span></div>
+      <div class="who">Oversight and controls <span>· accounting manager, finance leader, auditor, compliance lead</span></div>
+      <div class="row"><span class="area t">Reports</span><span class="area t">Management</span><span class="area t">Compliance</span></div>
+      <div class="who">Setup <span>· financial systems administrator</span></div>
+      <div class="row"><span class="area p">Settings</span></div>
+      <div class="who">From every screen</div>
+      <div class="row"><span class="area g">Help panel</span><span class="area g">User menu</span></div>
+    </div>
+  </div>
+  </div>
+  <div class="foot"><span>Home is the one new screen: the landing page the research asked for, replacing the R2R Console. Area names are working names; renaming Certification to Reconciliations, or Match to Matching, is its own decision.</span></div>
+</section>
+
+<section class="slide" id="s4">
+  <div class="n">4 / 7</div>
+  <div class="grow">
+  <div class="kicker">Where today's menu items go</div>
+  <h2>Every item on the current sitemap has a home, or a reason to go.</h2>
+  <p class="lead">Rows are today's modules. Columns are the proposed areas. Each cell counts the menu items that move there; darker means more. Nothing is lost, and the setup items of every module collect under Settings.</p>
+  <div>
+    <table class="mx">
+      <thead><tr><th class="r"></th><th>Home</th><th>Recon.</th><th>Matching</th><th>JEs</th><th>Close</th><th>Compl.</th><th>Reports</th><th>Mgmt</th><th>Settings</th><th>Help / menu</th><th>Removed</th><th class="tot">Total</th></tr></thead>
+      <tbody>
+        <tr><th class="r">Certification</th><td></td><td class="v2">45</td><td></td><td class="v1">9</td><td></td><td></td><td class="v1">8</td><td class="v2">34</td><td class="v3">107</td><td></td><td></td><td class="tot">203</td></tr>
+        <tr><th class="r">Match</th><td></td><td></td><td class="v2">42</td><td></td><td></td><td></td><td class="v1">4</td><td class="v1">1</td><td class="v3">121</td><td class="v1">1</td><td></td><td class="tot">169</td></tr>
+        <tr><th class="r">Close</th><td class="v1">1</td><td></td><td></td><td></td><td class="v1">17</td><td></td><td class="v1">7</td><td class="v1">19</td><td class="v3">67</td><td class="v1">3</td><td class="rm">3</td><td class="tot">117</td></tr>
+        <tr><th class="r">Compliance</th><td></td><td></td><td></td><td></td><td></td><td class="v2">27</td><td class="v1">1</td><td></td><td class="v1">22</td><td></td><td></td><td class="tot">50</td></tr>
+        <tr><th class="r">Top tabs, user menu</th><td class="v1">1</td><td class="v1">1</td><td class="v1">1</td><td></td><td></td><td class="v1">1</td><td class="v1">1</td><td></td><td class="v1">9</td><td class="v1">5</td><td class="rm">2</td><td class="tot">21</td></tr>
+        <tr><th class="r tot">Total</th><td class="tot">2</td><td class="tot">46</td><td class="tot">43</td><td class="tot">9</td><td class="tot">17</td><td class="tot">28</td><td class="tot">21</td><td class="tot">54</td><td class="tot">326</td><td class="tot">9</td><td class="tot">5</td><td class="tot">560</td></tr>
+      </tbody>
+    </table>
+    <div class="cols c3" style="margin-top:22px">
+      <div class="card"><h3>Read it like this</h3><p>Certification's 203 items split four ways: reconciliation work stays together, Journal Entries becomes its own area, the manager's dashboards and account maintenance go to Management, and 107 configuration screens go to Settings.</p></div>
+      <div class="card"><h3>What counts as setup</h3><p>Configuration, rules, reference data, imports and security. In Match that is most of the menu, tuned by a few power users; moving it does not change their work.</p></div>
+      <div class="card"><h3>Removed from customer navigation</h3><p>The Disclosure Management and Workday tabs, Close Collaboration (zero page views) and the Legacy Consoles. Five items. On the board, every screen also carries its Pendo visitor tier.</p></div>
+    </div>
+  </div>
+  </div>
+  <div class="foot"><a href="https://www.figma.com/board/OrlyDEaz9z56cSYLQK0pqV/-Internal--Trintech-Discovery-Board?node-id=2692-3631">Full proposed sitemap on the Discovery Board</a><a href="sitemap.html">Interactive sitemap, current and proposed</a><span>Help panel and user menu sit outside the nine areas.</span></div>
+</section>
+
+<section class="slide" id="s5">
+  <div class="n">5 / 7</div>
+  <div class="grow">
+  <div class="kicker">The two moves that carry it</div>
+  <h2>Managers get their own place. Shared things get one home.</h2>
+  <div class="cols c2" style="margin-top:12px;align-items:start">
+    <div class="card">
+      <h3>1 · Management, separate from Settings</h3>
+      <p>The research found two different people behind today's "Management" and "Configuration" menus: the accounting manager asking where work needs attention and who can move it, and the systems administrator asking what must be set up or fixed. The proposal gives each a home, so a manager can hold the people side without system-administrator rights.</p>
+      <p style="margin-top:16px;font-weight:600;color:var(--ink)">A manager checking what is due today</p>
+      <div class="path"><span class="lbl">Today</span><span class="step">Certification › Management › Management Dashboard</span><span class="step">Close › Consoles › Close Task Status</span><span class="step">Match › Dashboard</span><span class="sum">3 modules, 3 menus</span></div>
+      <div class="path"><span class="lbl">Proposed</span><span class="step t">Management › Oversight</span><span class="sum">1 area, 1 menu; the three dashboards sit side by side</span></div>
+    </div>
+    <div class="card">
+      <h3>2 · One home for each shared thing</h3>
+      <p>Entry points today, against one place in the proposal.</p>
+      <div class="one">
+        <span class="l">User management</span><b>19</b><span class="to">→ 1</span><span class="chip p">Settings</span>
+        <span class="l">Reports and binders</span><b>11</b><span class="to">→ 1</span><span class="chip t">Reports</span>
+        <span class="l">Calendars</span><b>4</b><span class="to">→ 1</span><span class="chip p">Settings</span>
+        <span class="l">Permissions</span><b>3</b><span class="to">→ 1</span><span class="chip p">Settings</span>
+        <span class="l">Periods</span><b>2</b><span class="to">→ 1</span><span class="chip t">Management</span>
+      </div>
+      <p style="margin-top:16px;font-size:15px;color:var(--ink3)">Counted on the current-state sitemap: each menu item that opens user, report, calendar, permission or period screens.</p>
+    </div>
+  </div>
+  </div>
+  <div class="foot"><span>Both moves match the board's stated goals: centralize organizational configuration and admin, move Journal Entry out from under Certification, reduce clicks.</span></div>
+</section>
+
+<section class="slide" id="s6">
+  <div class="n">6 / 7</div>
+  <div class="grow">
+  <div class="kicker">What changes for people</div>
+  <h2>Each persona's question has one place to look.</h2>
+  <div class="cols c3" style="margin-top:10px;align-items:start">
+    <div class="card persona"><div class="who" style="margin-top:0;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)">Accountant</div><div class="q">What remains, when is it due, and where do I act?</div><ul><li>Home opens on my work across modules, with favorites and notices.</li><li>The prepare, review and approve lists stay exactly as they are, inside Reconciliations.</li><li>Journal Entries is a top-level area instead of a side-menu item.</li><li>SmartMatch's two-grid layout and the dense tables are untouched.</li></ul></div>
+    <div class="card persona m"><div class="who" style="margin-top:0;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)">Accounting manager</div><div class="q">Where does work need attention, and who can move it forward?</div><ul><li>One area for status across Certification, Close and Match.</li><li>Accounts, assignments, change requests and decertifications together.</li><li>Reports in one area, with the binders.</li></ul></div>
+    <div class="card persona a"><div class="who" style="margin-top:0;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)">Financial systems administrator</div><div class="q">What must be set up, changed or resolved for work to continue?</div><ul><li>Users and access in one place, grouped as users, groups, profiles, and permissions and roles.</li><li>Calendars, imports, ERP and bank setup collected from three modules.</li><li>Module configuration stays per module, all under Settings.</li></ul></div>
+  </div>
+  <div class="cols c2" style="margin-top:22px">
+    <div class="card"><h3>Kept on purpose</h3><p>The role lists, the reconciliation record, SmartMatch, Close Home, and Compliance's internal structure. The assessment names these as strengths, so the redesign moves them rather than replacing them.</p></div>
+    <div class="card"><h3>Help</h3><p>Cadency Help and Beacon become one panel reachable from every screen. The help work itself is a separate initiative; the structure only gives it a place.</p></div>
+  </div>
+  </div>
+  <div class="foot"><span>Persona questions are the dashboard research's own wording.</span></div>
+</section>
+
+<section class="slide" id="s7">
+  <div class="n">7 / 7</div>
+  <div class="grow">
+  <div class="kicker">Decide, then validate</div>
+  <h2>Two decisions for this room. Everything else can follow.</h2>
+  <div class="cols c2" style="margin-top:12px;align-items:start">
+    <div>
+      <div class="card">
+        <h3>Decisions</h3>
+        <ol class="decide">
+          <li><b>Is Management a tab or a role view?</b> Visible to everyone, or only to people with manager or administrator rights.</li>
+          <li><b>Is QA review part of Reconciliations or its own area?</b> QA review is the sample check an admin or QA reviewer runs on certified reconciliations.</li>
+        </ol>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <h3>Assumptions we are carrying</h3>
+        <ol class="decide" start="3">
+          <li><b>Close shows only for customers who license it.</b> A product question; some customers never open it.</li>
+          <li><b>Periods can be managed in one place</b> across modules with different calendars. A data question, and the prerequisite for cross-module dashboards.</li>
+        </ol>
+      </div>
+    </div>
+    <div>
+      <div class="ask"><h3>The ask</h3><p>Agree this structure as the basis for look-and-feel options and customer validation. Not a build decision.</p></div>
+      <div class="card" style="margin-top:14px"><h3>What happens next</h3><p>Look-and-feel options on the new structure. Thirty-minute sessions with accountants and accounting managers: can they find what needs attention and reach the item or person they need? The first screens built on it are the Florence shell (the new app frame) and its landing page.</p></div>
+    </div>
+  </div>
+  </div>
+  <div class="foot"><a href="nav-redesign-draft.html">Full mapping, reasons and open questions</a><a href="https://www.figma.com/board/OrlyDEaz9z56cSYLQK0pqV/-Internal--Trintech-Discovery-Board?node-id=2692-3631">Proposed sitemap on the board</a></div>
+</section>
+
+<script>
+const ids=['s1','s2','s3','s4','s5','s6','s7'];const dots=[...document.querySelectorAll('.dots a')];const hint=document.getElementById('hint');
+function cur(){const y=window.scrollY+window.innerHeight/2;let i=0;ids.forEach((id,k)=>{const el=document.getElementById(id);if(el.offsetTop<=y)i=k});return i}
+function mark(){const i=cur();dots.forEach((d,k)=>d.classList.toggle('on',k===i));hint.style.display=i===6?'none':'block'}
+addEventListener('scroll',mark,{passive:true});mark();
+addEventListener('keydown',e=>{const i=cur();if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();document.getElementById(ids[Math.min(i+1,6)]).scrollIntoView()}if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();document.getElementById(ids[Math.max(i-1,0)]).scrollIntoView()}});
+</script>
+</body>
+</html>

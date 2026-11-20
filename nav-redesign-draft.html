@@ -1,0 +1,3246 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Cadency navigation: current state to proposed structure</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Cadency navigation: current state to proposed
+structure</h1>
+</header>
+<h1 id="cadency-navigation-current-state-to-proposed-structure">Cadency
+navigation: current state to proposed structure</h1>
+<p>Draft for the Nov 20 regroup. Every box on the current-state sitemap
+is mapped to a home in the proposed structure. Deeper screens (create,
+edit, audit trail) follow their parent unless the table says
+otherwise.</p>
+<h2 id="where-this-comes-from">Where this comes from</h2>
+<ul>
+<li>The current navigation is the sitemap on the Discovery Board
+("Cadency Sitemap - Future State" section, captured from UAT 22 and 23
+between Sep 29 and Oct 12, 2026), with every page coloured by unique
+visitors over 90 days from Pendo.</li>
+<li>What each screen does comes from the Cadency Product Guide (Success
+Center courses) and Brooke's Feature List by Module.</li>
+<li>Who needs what comes from the Cadency Dashboard Research report
+(final Nov 19) and the Cadency UX Assessment (Sep).</li>
+<li>The goals come from the kanban card "Cadency Navigation and Shell
+rewrite Strategy" and the Nov 19 mapping session with Brooke and
+Jenny.</li>
+</ul>
+<h2 id="what-the-evidence-asks-for">What the evidence asks for</h2>
+<ul>
+<li><strong>Organize by task, not by module or permission.</strong> The
+research found people land in the wrong module and move between views to
+assemble their work. Brooke's proposal and the session both started from
+task buckets.</li>
+<li><strong>One personal starting point.</strong> The research's first
+phase is a landing page with module links, favorites, help links and
+admin notices, growing into a work dashboard. Today that job is split
+between the R2R Console, Close Home, the configurable Home and each
+module's dashboard.</li>
+<li><strong>Managers see across the team, administrators set things
+up.</strong> The Accounting Manager asks where work needs attention and
+who can move it; the Financial Systems Administrator asks what must be
+set up or fixed. Today both live under "Management" in Certification and
+"Configuration" in Close. The proposal gives each its own top-level
+home.</li>
+<li><strong>One place for each shared thing.</strong> User management
+exists in four places, reports in six, calendars in three modules,
+permissions in three, periods in three. The duplicate stickies on the
+board and the kanban goal "centralize organizational configuration and
+admin" both point here.</li>
+<li><strong>Keep what works.</strong> Match's two-grid SmartMatch, the
+Certification role lists, and the dense tables are strengths in the
+assessment. The redesign moves them, it does not replace them.</li>
+<li><strong>Journal Entry gets its own top-level area.</strong> It has
+no tab today and lives inside Certification's side menu, yet its
+dashboard is in the top usage tier.</li>
+</ul>
+<h2 id="proposed-top-level">Proposed top level</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>What it is for</th>
+<th>Who it serves first</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Home</td>
+<td>My work across modules, favorites, notices, help. Replaces the R2R
+Console and the configurable Home.</td>
+<td>Everyone</td>
+</tr>
+<tr>
+<td>Reconciliations</td>
+<td>Certification's prepare, review and approve work, open items, bulk
+reconciliations, QA review, my accounts.</td>
+<td>Accountant</td>
+</tr>
+<tr>
+<td>Matching</td>
+<td>Transactions, SmartMatch, exceptions, import control, jobs, daily
+reconciliations.</td>
+<td>Accountant</td>
+</tr>
+<tr>
+<td>Journal Entries</td>
+<td>Dashboard, journal entry, recurring, import history, ERP open
+items.</td>
+<td>Accountant</td>
+</tr>
+<tr>
+<td>Close</td>
+<td>Action plans, queues, results, Close Home. Shown only to customers
+who use Close.</td>
+<td>Accountant</td>
+</tr>
+<tr>
+<td>Compliance</td>
+<td>Controls, results, surveys, scoping, code of conduct. Unchanged
+inside.</td>
+<td>Compliance users</td>
+</tr>
+<tr>
+<td>Reports</td>
+<td>Every report and binder from every module in one area.</td>
+<td>Accounting Manager, Finance Leader, Auditor</td>
+</tr>
+<tr>
+<td>Management</td>
+<td>Status across the team, accounts and assignments, entities and
+tasks, periods, team notices and proxies.</td>
+<td>Accounting Manager</td>
+</tr>
+<tr>
+<td>Settings</td>
+<td>Users and access, organization, calendars, module configuration,
+data and integrations, system.</td>
+<td>Financial Systems Administrator</td>
+</tr>
+</tbody>
+</table>
+<p>Outside the top level:</p>
+<ul>
+<li><strong>Help panel.</strong> One entry point on every screen.
+Cadency Help and Beacon merge into the integrated help work; the chat no
+longer takes the user away from their screen.</li>
+<li><strong>User menu.</strong> Profile, preferences, favorites (today's
+bookmarks), change password, sign out.</li>
+<li><strong>Removed from customer navigation.</strong> The Disclosure
+Management and Workday tabs, Close Collaboration (zero views), Close
+Legacy Consoles.</li>
+</ul>
+<p>Management and Settings are separate so a manager can hold the people
+side without system-administrator rights. Whether Management is visible
+to everyone or permissioned is an open question below.</p>
+<h2 id="proposed-structure-with-what-lands-where">Proposed structure
+with what lands where</h2>
+<p>Each proposed area lists the current screens that move into it, with
+their unique visitors over 90 days and the module they come from today.
+Menu groups are expanded to the screens inside them; a screen's own
+sub-screens follow it.</p>
+<h3 id="home">Home</h3>
+<ul>
+<li>Cadency landing / R2R Console · 1,008–41,234 · from Global
+shell</li>
+<li>Home (configurable) · 1,008–41,234 · from Close</li>
+</ul>
+<h3 id="reconciliations">Reconciliations</h3>
+<p><strong>Dashboard</strong></p>
+<ul>
+<li>Reconciliations Dashboard · 1,008–41,234 · from Certification</li>
+</ul>
+<p><strong>My reconciliations</strong></p>
+<ul>
+<li>Approvals Due · 1,008–41,234 · from Certification</li>
+<li>Completed Reconciliations · 1,008–41,234 · from Certification</li>
+<li>Completed Review · 1,008–41,234 · from Certification</li>
+<li>Decertified Reconciliations · 1,008–41,234 · from Certification
+(reachable from 2 places today)</li>
+<li>Reconciliation List · 1,008–41,234 · from Certification</li>
+<li>Reconciliations Due · 1,008–41,234 · from Certification</li>
+<li>Reconciliations Pending Modification · 1,008–41,234 · from
+Certification</li>
+<li>Reviews Due · 1,008–41,234 · from Certification</li>
+<li>Completed Approvals · 273–1,007 · from Certification</li>
+</ul>
+<p><strong>Reconciliation</strong></p>
+<ul>
+<li>Reconciliation Detail · 1,008–41,234 · from Certification (reachable
+from 3 places today)</li>
+</ul>
+<p><strong>Open items</strong></p>
+<ul>
+<li>Open Items List · 1,008–41,234 · from Certification (reachable from
+2 places today)</li>
+</ul>
+<p><strong>Bulk reconciliations</strong></p>
+<ul>
+<li>Bulk Reconciliations · 1,008–41,234 · from Certification</li>
+</ul>
+<p><strong>QA review</strong></p>
+<ul>
+<li>Perform QA Reviews · 1,008–41,234 · from Certification</li>
+<li>QA Dashboard · 1,008–41,234 · from Certification</li>
+<li>View Completed QA Reviews · no match · from Certification</li>
+</ul>
+<p><strong>My accounts</strong></p>
+<ul>
+<li>View Your Accounts · 1,008–41,234 · from Certification</li>
+<li>Change request history · 273–1,007 · from Certification</li>
+</ul>
+<h3 id="matching">Matching</h3>
+<p><strong>Dashboard</strong></p>
+<ul>
+<li>Dashboard · 273–1,007 · from Match</li>
+</ul>
+<p><strong>Transactions</strong></p>
+<ul>
+<li>Search · 1,008–41,234 · from Match</li>
+<li>SmartMatch · 1,008–41,234 · from Match</li>
+<li>Exceptions · 273–1,007 · from Match</li>
+</ul>
+<p><strong>Import control</strong></p>
+<ul>
+<li>Balance Control · 273–1,007 · from Match</li>
+<li>Transaction Control · 273–1,007 · from Match</li>
+</ul>
+<p><strong>Jobs</strong></p>
+<ul>
+<li>Task History · 1,008–41,234 · from Match</li>
+<li>Recurring · 273–1,007 · from Match</li>
+<li>Running · 273–1,007 · from Match</li>
+</ul>
+<p><strong>Daily reconciliations</strong></p>
+<ul>
+<li>Daily Reconciliations · 125–272 · from Match</li>
+</ul>
+<h3 id="journal-entries">Journal Entries</h3>
+<p><strong>Dashboard</strong></p>
+<ul>
+<li>Journal Entries Dashboard · 1,008–41,234 · from Certification
+(reachable from 2 places today)</li>
+</ul>
+<p><strong>Journal entry</strong></p>
+<p><strong>Recurring</strong></p>
+<ul>
+<li>Recurring Entries Dashboard · 1,008–41,234 · from Certification</li>
+<li>Recurring Journal Entries · 1,008–41,234 · from Certification</li>
+</ul>
+<p><strong>Import history</strong></p>
+<ul>
+<li>Import History · 1,008–41,234 · from Certification</li>
+</ul>
+<p><strong>ERP open items</strong></p>
+<ul>
+<li>ERP Open Item Management · no match · from Certification</li>
+</ul>
+<h3 id="close">Close</h3>
+<p><strong>Close Home</strong></p>
+<ul>
+<li>Close Home · 1,008–41,234 · from Close</li>
+</ul>
+<p><strong>Action plans</strong></p>
+<ul>
+<li>Cancelled · 1,008–41,234 · from Close</li>
+<li>Closed · 1,008–41,234 · from Close</li>
+<li>Inbox · 1,008–41,234 · from Close</li>
+<li>Outbox · 1,008–41,234 · from Close</li>
+<li>Proxy · 1,008–41,234 · from Close</li>
+<li>Reopen · 1,008–41,234 · from Close</li>
+<li>Upcoming · 1,008–41,234 · from Close</li>
+</ul>
+<p><strong>Action plans › Action plan</strong></p>
+<p><strong>Queues</strong></p>
+<ul>
+<li>Queues · no match · from Close</li>
+</ul>
+<p><strong>Results</strong></p>
+<ul>
+<li>Results · 1,008–41,234 · from Close</li>
+</ul>
+<h3 id="compliance">Compliance</h3>
+<p><strong>Controls</strong></p>
+<ul>
+<li>Control Hierarchy Tree · no match · from Compliance</li>
+</ul>
+<p><strong>Surveys</strong></p>
+<ul>
+<li>Risk Assessment Deployment Details · no match · from Compliance</li>
+<li>Risk Assessments · no match · from Compliance</li>
+<li>Risk Assessments Results For Deployment · no match · from
+Compliance</li>
+</ul>
+<p><strong>Scoping</strong></p>
+<ul>
+<li>Scoping Profile · no match · from Compliance</li>
+<li>Scoping Rule · no match · from Compliance</li>
+</ul>
+<p><strong>Code of conduct</strong></p>
+<ul>
+<li>Code of Conduct · 273–1,007 · from Compliance</li>
+</ul>
+<p><strong>Results › Assessments &amp; issues</strong></p>
+<ul>
+<li>302 Certification · no match · from Compliance</li>
+<li>Code of Conduct · no match · from Compliance</li>
+<li>Exception · no match · from Compliance</li>
+<li>Issue · no match · from Compliance</li>
+<li>Management Sub-certification · no match · from Compliance</li>
+<li>Remediation · no match · from Compliance</li>
+<li>Risk Assessment · no match · from Compliance</li>
+</ul>
+<p><strong>Results › Control results</strong></p>
+<ul>
+<li>Control Evaluations · no match · from Compliance</li>
+<li>Control Tests · no match · from Compliance</li>
+<li>Related Controls · no match · from Compliance</li>
+<li>View (Tasks) · no match · from Compliance</li>
+</ul>
+<h3 id="reports">Reports</h3>
+<p><strong>Reconciliations</strong></p>
+<ul>
+<li>QA reports · no match · from Certification</li>
+<li>Reconciliation reports · no match · from Certification</li>
+<li>Reporting (Analysis) · no match · from Certification</li>
+</ul>
+<p><strong>Journal Entries</strong></p>
+<ul>
+<li>JE reports · no match · from Certification</li>
+</ul>
+<p><strong>Matching</strong></p>
+<ul>
+<li>Legacy reports · 273–1,007 · from Match</li>
+<li>Standard reports (Reports screen) · no match · from Match</li>
+</ul>
+<p><strong>Close</strong></p>
+<ul>
+<li>Close reports · no match · from Close</li>
+</ul>
+<p><strong>Binders</strong></p>
+<ul>
+<li>Binder Configuration · no match · from Certification</li>
+<li>Binders · no match · from Close</li>
+<li>Close binders · no match · from Close</li>
+<li>Compliance Binder · no match · from Compliance</li>
+<li>JE Binders · no match · from Certification</li>
+</ul>
+<p><strong>All reports</strong></p>
+<ul>
+<li>REPORTS (new tab) · no match · from Global shell</li>
+</ul>
+<h3 id="management">Management</h3>
+<p><strong>Oversight</strong></p>
+<p><strong>Oversight › Reconciliation status</strong></p>
+<ul>
+<li>Delinquent Reviews · 1,008–41,234 · from Certification</li>
+<li>Management Dashboard · 1,008–41,234 · from Certification</li>
+<li>Reconciliation Status Dashboard · 1,008–41,234 · from
+Certification</li>
+<li>Delinquent Approvals · 273–1,007 · from Certification</li>
+<li>Delinquent Reconciliations · no match · from Certification</li>
+</ul>
+<p><strong>Oversight › Journal entry status</strong></p>
+<ul>
+<li>Document Number Dashboard · no match · from Certification</li>
+<li>ERP Open Item Document · no match · from Certification</li>
+</ul>
+<p><strong>Oversight › Close status</strong></p>
+<ul>
+<li>Close Task · no match · from Close</li>
+<li>Close Task Status · no match · from Close</li>
+<li>Dependencies · no match · from Close</li>
+</ul>
+<p><strong>Oversight › Jobs and queues</strong></p>
+<ul>
+<li>Process Queue · 1,008–41,234 · from Certification</li>
+</ul>
+<p><strong>Accounts &amp; structure</strong></p>
+<ul>
+<li>Account manager · 125–272 · from Match</li>
+</ul>
+<p><strong>Accounts &amp; structure › Accounts</strong></p>
+<ul>
+<li>Accounts List · 1,008–41,234 · from Certification</li>
+<li>Bulk Account Maintenance · 1,008–41,234 · from Certification</li>
+<li>View Unassigned Accounts · 1,008–41,234 · from Certification</li>
+<li>Decertification Requests · 273–1,007 · from Certification</li>
+<li>User Change Requests · 273–1,007 · from Certification</li>
+<li>Inactive Accounts With A Balance · no match · from
+Certification</li>
+<li>Role Assignments · no match · from Certification</li>
+</ul>
+<p><strong>Accounts &amp; structure › Entities and tasks</strong></p>
+<ul>
+<li>Close Hierarchy · 1,008–41,234 · from Close</li>
+<li>Task manager · no match · from Close</li>
+</ul>
+<p><strong>Periods</strong></p>
+<ul>
+<li>Active Periods · 273–1,007 · from Certification</li>
+<li>Periods · 273–1,007 · from Close</li>
+</ul>
+<p><strong>Team › Proxies</strong></p>
+<ul>
+<li>Proxy Administration · 125–272 · from Close</li>
+<li>Proxy Manager · no match · from Close</li>
+</ul>
+<p><strong>Team › Notify users</strong></p>
+<ul>
+<li>Email Users · no match · from Certification</li>
+</ul>
+<p><strong>Team › Notices and documents</strong></p>
+<ul>
+<li>Application News · 125–272 · from Certification</li>
+<li>Application documentation · no match · from Certification</li>
+</ul>
+<h3 id="settings">Settings</h3>
+<p><strong>Users &amp; access</strong></p>
+<p><strong>Organization</strong></p>
+<ul>
+<li>Operational structure manager · 273–1,007 · from Match</li>
+<li>Location manager · 125–272 · from Match</li>
+<li>Sector manager · 125–272 · from Match</li>
+<li>Business Units · no match · from Compliance</li>
+<li>Organizational Configuration Data · no match · from
+Certification</li>
+</ul>
+<p><strong>Calendars &amp; periods</strong></p>
+<ul>
+<li>Calendars · 125–272 · from Match</li>
+<li>Scheduling Configuration Data · 125–272 · from Certification</li>
+<li>Close days · 42–124 · from Close</li>
+<li>Fiscal Years · no match · from Close</li>
+<li>Frequencies · no match · from Close</li>
+</ul>
+<p><strong>Module configuration › Reconciliations ›
+Automation</strong></p>
+<ul>
+<li>Delete Pending Reconciliations · 273–1,007 · from Certification</li>
+<li>Dynamic Account Maintenance · 273–1,007 · from Certification</li>
+<li>Auto/Bulk Reconciliation · 125–272 · from Certification</li>
+<li>Delete Staging Table Data · no match · from Certification</li>
+</ul>
+<p><strong>Module configuration › Journal Entries</strong></p>
+<ul>
+<li>Field Definitions · 273–1,007 · from Certification</li>
+<li>JE Templates · 273–1,007 · from Certification</li>
+<li>Approver Routing · 125–272 · from Certification</li>
+<li>Approver Routing Tables · 125–272 · from Certification</li>
+<li>Pick Lists · 125–272 · from Certification</li>
+<li>Impact Indicators · no match · from Certification</li>
+<li>Pick List Template Mapping · no match · from Certification</li>
+</ul>
+<p><strong>Module configuration › Matching</strong></p>
+<ul>
+<li>Audits (Admin in the feature list) · 273–1,007 · from Match</li>
+<li>Match rules and sets · 273–1,007 · from Match</li>
+<li>Transaction criteria · 273–1,007 · from Match</li>
+<li>Amortization/depreciation · 125–272 · from Match</li>
+<li>General system parameters · 125–272 · from Match</li>
+<li>Reference definitions · 125–272 · from Match</li>
+<li>SmartResolve procedures · 125–272 · from Match</li>
+</ul>
+<p><strong>Module configuration › Close</strong></p>
+<ul>
+<li>Profiles · 125–272 · from Close</li>
+<li>Close consoles · 42–124 · from Close</li>
+<li>List of values · no match · from Close (reachable from 2 places
+today)</li>
+<li>Properties · no match · from Close</li>
+<li>References · no match · from Close</li>
+<li>Search · no match · from Close</li>
+<li>Task reporting fields · no match · from Close</li>
+<li>User Defined Fields · no match · from Close</li>
+<li>Accounts · 0 views · from Close</li>
+</ul>
+<p><strong>Data &amp; integrations</strong></p>
+<ul>
+<li>Data Mart · no match · from Close</li>
+</ul>
+<p><strong>Data &amp; integrations › Imports</strong></p>
+<ul>
+<li>Configure · 273–1,007 · from Close</li>
+<li>Configure Workbook · 273–1,007 · from Close</li>
+<li>Import · 125–272 · from Close</li>
+<li>Import Data · 125–272 · from Close</li>
+<li>Import translations · 125–272 · from Match</li>
+<li>Import validations · 125–272 · from Match</li>
+<li>Upload and Verify Workbook · 125–272 · from Close</li>
+<li>Clear Import Manager Lock · 42–124 · from Close</li>
+<li>Duplicate checking definitions · 42–124 · from Match</li>
+<li>Batch import definitions · no match · from Match</li>
+</ul>
+<p><strong>Data &amp; integrations › ERP and GL</strong></p>
+<ul>
+<li>GL integration · 273–1,007 · from Match</li>
+<li>Posting Destination · 125–272 · from Certification</li>
+<li>ERP Open Item Management · no match · from Certification</li>
+</ul>
+<p><strong>Data &amp; integrations › Banks</strong></p>
+<ul>
+<li>BAI configuration · 125–272 · from Match</li>
+<li>Configuration · 42–124 · from Match</li>
+<li>History · 0–41 · from Match</li>
+<li>In Transit · 0–41 · from Match</li>
+</ul>
+<p><strong>Data &amp; integrations › Jobs</strong></p>
+<ul>
+<li>Scheduler · 0–41 · from Match</li>
+<li>Close Update Schedules · no match · from Certification</li>
+</ul>
+<p><strong>System › Notifications</strong></p>
+<ul>
+<li>Email template manager · no match · from Match</li>
+<li>Notifications Configuration · no match · from Certification</li>
+</ul>
+<p><strong>System › Archive</strong></p>
+<ul>
+<li>Transactions · 42–124 · from Match</li>
+<li>Amortization/depreciation · 0–41 · from Match</li>
+<li>Daily reconciliations · 0–41 · from Match</li>
+<li>Group reconciliations · 0–41 · from Match</li>
+<li>Single reconciliations · 0–41 · from Match</li>
+</ul>
+<p><strong>Module configuration › Compliance › Hierarchy &amp;
+controls</strong></p>
+<ul>
+<li>Action Plan Control Hierarchy · no match · from Compliance</li>
+<li>Assertion · no match · from Compliance</li>
+<li>COSO Principles · no match · from Compliance</li>
+<li>Control Category · no match · from Compliance</li>
+<li>Control Hierarchy Manager · no match · from Compliance</li>
+<li>Control Hierarchy Snapshot · no match · from Compliance</li>
+</ul>
+<p><strong>Module configuration › Compliance › Reference
+data</strong></p>
+<ul>
+<li>Account · no match · from Compliance</li>
+<li>Consoles · no match · from Compliance</li>
+<li>Disclosure Committee · no match · from Compliance</li>
+<li>List of Values · no match · from Compliance</li>
+<li>Profile Detail · no match · from Compliance</li>
+<li>References · no match · from Compliance</li>
+<li>User Defined Fields · no match · from Compliance</li>
+</ul>
+<p><strong>Module configuration › Reconciliations › Templates &amp;
+results</strong></p>
+<ul>
+<li>Reconciliation Templates · 273–1,007 · from Certification</li>
+<li>Classifications · 42–124 · from Certification</li>
+<li>Account Configuration Data · no match · from Certification</li>
+<li>FX Conversion Configuration · no match · from Certification</li>
+<li>Quality Assurance · no match · from Certification</li>
+<li>Reconciliation Results · no match · from Certification</li>
+</ul>
+<p><strong>System › Application</strong></p>
+<ul>
+<li>Application Settings · 125–272 · from Certification</li>
+<li>Application Text · 42–124 · from Certification</li>
+<li>About · no match · from Certification</li>
+<li>Application Configuration Data · no match · from Certification</li>
+<li>Console panel display · no match · from Global shell</li>
+<li>Masking definitions · no match · from Match</li>
+<li>Properties · no match · from Close</li>
+<li>System Configuration · no match · from Certification</li>
+<li>User Interface · no match · from Close</li>
+</ul>
+<p><strong>System › Maintenance jobs</strong></p>
+<ul>
+<li>Cache · no match · from Close</li>
+<li>Check System · no match · from Close</li>
+<li>Data Purge · no match · from Close</li>
+<li>Update FX Reconciliations · no match · from Certification</li>
+<li>Update High Low Balances · no match · from Certification</li>
+<li>View SQL Event Schedule (Jobs) · no match · from Certification
+(reachable from 2 places today)</li>
+</ul>
+<p><strong>Users &amp; access › Groups</strong></p>
+<ul>
+<li>User Groups · 273–1,007 · from Certification</li>
+<li>Groups · 125–272 · from Close</li>
+<li>User Folders · 125–272 · from Close</li>
+<li>User group manager · 42–124 · from Match</li>
+</ul>
+<p><strong>Users &amp; access › Permissions &amp; roles</strong></p>
+<ul>
+<li>Permissions · 273–1,007 · from Close, Compliance, Global shell
+(reachable from 3 places today)</li>
+<li>Roles: Rights · 273–1,007 · from Certification</li>
+<li>Roles: Maintain · 125–272 · from Certification</li>
+<li>Close administrators · no match · from Close</li>
+<li>Global Lock Down · no match · from Certification</li>
+<li>SSO Configuration · no match · from Global shell</li>
+<li>Template Access Control · no match · from Certification</li>
+<li>User permissions · no match · from Match</li>
+</ul>
+<p><strong>Users &amp; access › Profiles</strong></p>
+<ul>
+<li>Data Profiles · 125–272 · from Certification</li>
+<li>Preview Profile Accounts · 125–272 · from Certification</li>
+<li>Profile Groups: Add · 125–272 · from Certification</li>
+<li>Profile Groups: View · 125–272 · from Certification</li>
+<li>Profile: Add · 125–272 · from Certification</li>
+<li>Profile: View · 125–272 · from Certification</li>
+<li>Security profiles · 125–272 · from Match</li>
+</ul>
+<p><strong>Users &amp; access › Users</strong></p>
+<ul>
+<li>Users · 1,008–41,234 · from Global shell</li>
+<li>User List · 273–1,007 · from Certification</li>
+<li>Unattached contacts · 42–124 · from Match</li>
+<li>People · no match · from Close</li>
+</ul>
+<h3 id="help-panel">Help panel</h3>
+<ul>
+<li>Beacon · no match · from Global shell</li>
+<li>Cadency Help · no match · from Global shell</li>
+</ul>
+<h3 id="user-menu">User menu</h3>
+<ul>
+<li>Change Password · no match · from Global shell</li>
+<li>Sign Out · no match · from Global shell</li>
+</ul>
+<p><strong>Profile</strong></p>
+<ul>
+<li>User Account · no match · from Close</li>
+</ul>
+<p><strong>Preferences</strong></p>
+<ul>
+<li>Preferences · 273–1,007 · from Match</li>
+</ul>
+<p><strong>Favorites</strong></p>
+<ul>
+<li>Bookmarks · no match · from Close, Global shell (reachable from 2
+places today)</li>
+</ul>
+<h2 id="mapping-module-by-module">Mapping, module by module</h2>
+<p>Current path, unique visitors over 90 days, proposed home, and why.
+Rows are the screens down to the third level plus any deeper screen that
+moves somewhere different from its parent.</p>
+<h3 id="global-shell">Global shell</h3>
+<table>
+<thead>
+<tr>
+<th>Current</th>
+<th>Visitors</th>
+<th>Proposed home</th>
+<th>Why</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cadency landing / R2R Console</td>
+<td>1,008–41,234</td>
+<td>Home</td>
+<td>Becomes the tailored landing: module links, favorites, help links,
+admin notices, then work that needs attention</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Top tabs › Match</td>
+<td>no match</td>
+<td>Matching</td>
+<td>Task area, renamed for what people do there</td>
+<td>goal</td>
+</tr>
+<tr>
+<td>Top tabs › Certification</td>
+<td>no match</td>
+<td>Reconciliations</td>
+<td>Task area, renamed for what people do there; Journal Entries moves
+out</td>
+<td>goal</td>
+</tr>
+<tr>
+<td>Top tabs › Compliance</td>
+<td>no match</td>
+<td>Compliance</td>
+<td>Kept as is; no Success Center material and few visits</td>
+<td>usage</td>
+</tr>
+<tr>
+<td>Top tabs › Disclosure Management</td>
+<td>no match</td>
+<td>Remove from customer navigation</td>
+<td>Chris: not something customers see</td>
+<td>session</td>
+</tr>
+<tr>
+<td>Top tabs › Workday</td>
+<td>no match</td>
+<td>Remove from customer navigation</td>
+<td>Chris: does not know why it appears</td>
+<td>session</td>
+</tr>
+<tr>
+<td>Top tabs › Beacon</td>
+<td>no match</td>
+<td>Help panel</td>
+<td>Chat should open in context, not as a separate section</td>
+<td>session</td>
+</tr>
+<tr>
+<td>Top tabs › Cadency Help</td>
+<td>no match</td>
+<td>Help panel</td>
+<td>One help entry point from every screen, questions ranked by
+screen</td>
+<td>session</td>
+</tr>
+<tr>
+<td>User menu › Admin</td>
+<td>no match</td>
+<td>Settings</td>
+<td>Admin is also reachable from Compliance; one entry point</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>User menu › Admin › User management</td>
+<td>no match</td>
+<td>Settings › Users &amp; access</td>
+<td>All four user-management locations merge here</td>
+<td>goal</td>
+</tr>
+<tr>
+<td>User menu › Admin › User management › Permissions</td>
+<td>273–1,007</td>
+<td>Settings › Users &amp; access › Permissions &amp; roles</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>User menu › Admin › User management › Users</td>
+<td>1,008–41,234</td>
+<td>Settings › Users &amp; access › Users</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>User menu › Admin › Console Configuration</td>
+<td>no match</td>
+<td>Settings › System › Application</td>
+<td>Console panel display is a system setting</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>User menu › Admin › SSO Configuration</td>
+<td>no match</td>
+<td>Settings › Users &amp; access › Permissions &amp; roles</td>
+<td>Sign-in configuration sits with access</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>User menu › Admin › REPORTS (new tab)</td>
+<td>no match</td>
+<td>Reports › All reports</td>
+<td>One reporting area</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>User menu › Change Password</td>
+<td>no match</td>
+<td>User menu</td>
+<td>Personal, stays in the user menu</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>User menu › Sign Out</td>
+<td>no match</td>
+<td>User menu</td>
+<td>Stays</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>User menu › Bookmarks</td>
+<td>no match</td>
+<td>User menu › Favorites</td>
+<td>Same idea as the landing-page favorites pattern</td>
+<td>research</td>
+</tr>
+</tbody>
+</table>
+<h3 id="close-1">Close</h3>
+<table>
+<thead>
+<tr>
+<th>Current</th>
+<th>Visitors</th>
+<th>Proposed home</th>
+<th>Why</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Home</td>
+<td>no match</td>
+<td>Close</td>
+<td>Close Home becomes the Close landing; the personal Home folds into
+the global Home</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Home › Home</td>
+<td>no match</td>
+<td>Close</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Home › Home › Close Home</td>
+<td>1,008–41,234</td>
+<td>Close › Close Home</td>
+<td>Six fixed panels stay as the module landing</td>
+<td>usage</td>
+</tr>
+<tr>
+<td>Home › Home › Home (configurable)</td>
+<td>1,008–41,234</td>
+<td>Home</td>
+<td>Configurable components become the global landing</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Home › Folders</td>
+<td>no match</td>
+<td>Close › Action plans</td>
+<td>Inbox, Upcoming, Outbox, Proxy, Closed, Cancelled and Reopen all
+open one page today; make them filters of one list</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Home › Folders › Inbox</td>
+<td>1,008–41,234</td>
+<td>Close › Action plans</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Home › Folders › Upcoming</td>
+<td>1,008–41,234</td>
+<td>Close › Action plans</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Home › Folders › Outbox</td>
+<td>1,008–41,234</td>
+<td>Close › Action plans</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Home › Folders › Proxy</td>
+<td>1,008–41,234</td>
+<td>Close › Action plans</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Home › Folders › Closed</td>
+<td>1,008–41,234</td>
+<td>Close › Action plans</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Home › Folders › Cancelled</td>
+<td>1,008–41,234</td>
+<td>Close › Action plans</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Home › Folders › Reopen</td>
+<td>1,008–41,234</td>
+<td>Close › Action plans</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Home › Folders › Action Plan Pop Out (click reference number)</td>
+<td>1,008–41,234</td>
+<td>Close › Action plans › Action plan</td>
+<td>The record opens in place, not a separate window</td>
+<td>assessment</td>
+</tr>
+<tr>
+<td>Home › Queues</td>
+<td>no match</td>
+<td>Close › Queues</td>
+<td>Shared pool stays a task view</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Home › Proxy Manager</td>
+<td>no match</td>
+<td>Management › Team › Proxies</td>
+<td>A manager sets backups; merge with Proxy Administration</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Home › Proxy Manager › Add (Proxy Manager)</td>
+<td>no match</td>
+<td>Management › Team › Proxies</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Home › User Account</td>
+<td>no match</td>
+<td>User menu › Profile</td>
+<td>Personal settings</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Home › User Account › Edit (User Account)</td>
+<td>no match</td>
+<td>User menu › Profile</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close</td>
+<td>no match</td>
+<td>Close</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Consoles</td>
+<td>no match</td>
+<td>Management › Oversight › Close status</td>
+<td>Task status, task lists and dependencies are oversight views</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Close › Consoles › Close Task Status</td>
+<td>no match</td>
+<td>Management › Oversight › Close status</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Consoles › Tasklists</td>
+<td>no match</td>
+<td>Management › Oversight › Close status</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Consoles › Dependencies</td>
+<td>no match</td>
+<td>Management › Oversight › Close status</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Collaboration</td>
+<td>0 views</td>
+<td>Remove</td>
+<td>Zero page views; only a task flag in the training material</td>
+<td>usage</td>
+</tr>
+<tr>
+<td>Close › Close Hierarchy</td>
+<td>1,008–41,234</td>
+<td>Management › Accounts &amp; structure › Entities and tasks</td>
+<td>Managers maintain entities and tasks between periods</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Close › Close Hierarchy › Entities</td>
+<td>273–1,007</td>
+<td>Management › Accounts &amp; structure › Entities and tasks</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Close Hierarchy › Tasks</td>
+<td>273–1,007</td>
+<td>Management › Accounts &amp; structure › Entities and tasks</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Periods</td>
+<td>273–1,007</td>
+<td>Management › Periods</td>
+<td>Opening and closing periods is a management act; one place across
+modules</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Close › Periods › Open period</td>
+<td>no match</td>
+<td>Management › Periods</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Periods › Open period › Binders</td>
+<td>no match</td>
+<td>Reports › Binders</td>
+<td>Audit packages are outputs</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Close › Periods › Upcoming</td>
+<td>125–272</td>
+<td>Management › Periods</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Results</td>
+<td>1,008–41,234</td>
+<td>Close › Results</td>
+<td>Tasks and issues results are daily work for Close users</td>
+<td>usage</td>
+</tr>
+<tr>
+<td>Close › Results › Tasks</td>
+<td>1,008–41,234</td>
+<td>Close › Results</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Results › Issues</td>
+<td>125–272</td>
+<td>Close › Results</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Legacy Consoles</td>
+<td>no match</td>
+<td>Remove</td>
+<td>Replaced by Close status under Management</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Close › Legacy Consoles › Close Task Status</td>
+<td>no match</td>
+<td>Remove</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Setup</td>
+<td>no match</td>
+<td>Settings › Module configuration › Close</td>
+<td>Setup items are configuration, not daily work</td>
+<td>goal</td>
+</tr>
+<tr>
+<td>Close › Setup › Administrators</td>
+<td>no match</td>
+<td>Settings › Users &amp; access › Permissions &amp; roles</td>
+<td>Roles and admins live with users</td>
+<td>goal</td>
+</tr>
+<tr>
+<td>Close › Setup › Close consoles</td>
+<td>42–124</td>
+<td>Settings › Module configuration › Close</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Setup › Profiles</td>
+<td>125–272</td>
+<td>Settings › Module configuration › Close</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Setup › Accounts</td>
+<td>0 views</td>
+<td>Settings › Module configuration › Close</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Setup › Close days</td>
+<td>42–124</td>
+<td>Settings › Calendars &amp; periods</td>
+<td>Close days are calendar rules</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Close › Setup › Close binders</td>
+<td>no match</td>
+<td>Reports › Binders</td>
+<td>Audit package definition and download</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Close › Setup › Task reporting fields</td>
+<td>no match</td>
+<td>Settings › Module configuration › Close</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Setup › References</td>
+<td>no match</td>
+<td>Settings › Module configuration › Close</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Setup › Task manager</td>
+<td>no match</td>
+<td>Management › Accounts &amp; structure › Entities and tasks</td>
+<td>Task definitions sit with the hierarchy they belong to</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Close › Setup › List of values</td>
+<td>no match</td>
+<td>Settings › Module configuration › Close</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close › Setup › Close Import Manager</td>
+<td>no match</td>
+<td>Settings › Data &amp; integrations › Imports</td>
+<td>Same job as Configuration › Import Manager</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Configuration</td>
+<td>no match</td>
+<td>Settings</td>
+<td>Configuration is a settings area</td>
+<td>goal</td>
+</tr>
+<tr>
+<td>Configuration › System</td>
+<td>no match</td>
+<td>Settings › System › Application</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › System › Properties</td>
+<td>no match</td>
+<td>Settings › System › Application</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › System › User Interface</td>
+<td>no match</td>
+<td>Settings › System › Application</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › System › Data Mart</td>
+<td>no match</td>
+<td>Settings › Data &amp; integrations</td>
+<td>Data Mart feeds Task Analytics</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Configuration › System › User Defined Fields</td>
+<td>no match</td>
+<td>Settings › Module configuration › Close</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › System › List of values</td>
+<td>no match</td>
+<td>Settings › Module configuration › Close</td>
+<td>Duplicate of Setup › List of values</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Configuration › System › Check System</td>
+<td>no match</td>
+<td>Settings › System › Maintenance jobs</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › System › Cache</td>
+<td>no match</td>
+<td>Settings › System › Maintenance jobs</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › System › Data Purge</td>
+<td>no match</td>
+<td>Settings › System › Maintenance jobs</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Action Plan</td>
+<td>no match</td>
+<td>Settings › Module configuration › Close</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Action Plan › Search</td>
+<td>no match</td>
+<td>Settings › Module configuration › Close</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Action Plan › Properties</td>
+<td>no match</td>
+<td>Settings › Module configuration › Close</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Calendar</td>
+<td>no match</td>
+<td>Settings › Calendars &amp; periods</td>
+<td>Centralized calendars across modules</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Configuration › Calendar › Frequencies</td>
+<td>no match</td>
+<td>Settings › Calendars &amp; periods</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Calendar › Fiscal Years</td>
+<td>no match</td>
+<td>Settings › Calendars &amp; periods</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › User Management</td>
+<td>no match</td>
+<td>Settings › Users &amp; access</td>
+<td>Merges with global, Certification and Match user management</td>
+<td>goal</td>
+</tr>
+<tr>
+<td>Configuration › User Management › Permissions</td>
+<td>273–1,007</td>
+<td>Settings › Users &amp; access › Permissions &amp; roles</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › User Management › User Folders</td>
+<td>125–272</td>
+<td>Settings › Users &amp; access › Groups</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › User Management › Groups</td>
+<td>125–272</td>
+<td>Settings › Users &amp; access › Groups</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › User Management › Proxy Administration</td>
+<td>125–272</td>
+<td>Management › Team › Proxies</td>
+<td>Merges with Proxy Manager</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Configuration › User Management › People</td>
+<td>no match</td>
+<td>Settings › Users &amp; access › Users</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Import Manager</td>
+<td>no match</td>
+<td>Settings › Data &amp; integrations › Imports</td>
+<td>One import area for workbook loads</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Configuration › Import Manager › Configure Workbook</td>
+<td>273–1,007</td>
+<td>Settings › Data &amp; integrations › Imports</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Import Manager › Upload and Verify Workbook</td>
+<td>125–272</td>
+<td>Settings › Data &amp; integrations › Imports</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Import Manager › Import Data</td>
+<td>125–272</td>
+<td>Settings › Data &amp; integrations › Imports</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Import Manager › Clear Import Manager Lock</td>
+<td>42–124</td>
+<td>Settings › Data &amp; integrations › Imports</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Close reports</td>
+<td>no match</td>
+<td>Reports › Close</td>
+<td>One reporting area</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Bookmarks</td>
+<td>no match</td>
+<td>User menu › Favorites</td>
+<td>Same as the global bookmarks</td>
+<td>duplicate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="match">Match</h3>
+<table>
+<thead>
+<tr>
+<th>Current</th>
+<th>Visitors</th>
+<th>Proposed home</th>
+<th>Why</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dashboard</td>
+<td>273–1,007</td>
+<td>Matching › Dashboard</td>
+<td>Module landing; also surfaces in Management oversight</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Transactions</td>
+<td>no match</td>
+<td>Matching › Transactions</td>
+<td>Search, SmartMatch and Exceptions are the daily work; keep the
+two-grid layout people like</td>
+<td>assessment</td>
+</tr>
+<tr>
+<td>Transactions › Search</td>
+<td>1,008–41,234</td>
+<td>Matching › Transactions</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Transactions › Search › Details</td>
+<td>1,008–41,234</td>
+<td>Matching › Transactions</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Transactions › SmartMatch</td>
+<td>1,008–41,234</td>
+<td>Matching › Transactions</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Transactions › Exceptions</td>
+<td>273–1,007</td>
+<td>Matching › Transactions</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Transactions › Exceptions › Exception detail</td>
+<td>no match</td>
+<td>Matching › Transactions</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Manage</td>
+<td>no match</td>
+<td>Matching › Import control</td>
+<td>Failed batches and balances are daily operations for the person
+running Match</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Manage › Transaction Control</td>
+<td>273–1,007</td>
+<td>Matching › Import control</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Manage › Transaction Control › Batch Detail (Edit)</td>
+<td>273–1,007</td>
+<td>Matching › Import control</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Manage › Transaction Control › New (Create Batch)</td>
+<td>273–1,007</td>
+<td>Matching › Import control</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Manage › Balance Control</td>
+<td>273–1,007</td>
+<td>Matching › Import control</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration</td>
+<td>no match</td>
+<td>Settings › Module configuration › Matching</td>
+<td>Rules and reference data are configuration</td>
+<td>goal</td>
+</tr>
+<tr>
+<td>Configuration › Amortization/depreciation</td>
+<td>125–272</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Amortization/depreciation › Add New (schedule)</td>
+<td>42–124</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Amortization/depreciation ›
+Amortization/depreciation folders</td>
+<td>0–41</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Batch import definitions</td>
+<td>no match</td>
+<td>Settings › Data &amp; integrations › Imports</td>
+<td>Import definitions sit with the other import setup</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Configuration › Batch import definitions › Create</td>
+<td>0–41</td>
+<td>Settings › Data &amp; integrations › Imports</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › General system parameters</td>
+<td>125–272</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › GL integration</td>
+<td>273–1,007</td>
+<td>Settings › Data &amp; integrations › ERP and GL</td>
+<td>Integration setup</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Configuration › GL integration › GL account numbers</td>
+<td>125–272</td>
+<td>Settings › Data &amp; integrations › ERP and GL</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › GL integration › GL groups</td>
+<td>125–272</td>
+<td>Settings › Data &amp; integrations › ERP and GL</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › GL integration › GL parameters</td>
+<td>125–272</td>
+<td>Settings › Data &amp; integrations › ERP and GL</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › GL integration › Intercompany companies</td>
+<td>42–124</td>
+<td>Settings › Data &amp; integrations › ERP and GL</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › GL integration › Intercompany routing</td>
+<td>42–124</td>
+<td>Settings › Data &amp; integrations › ERP and GL</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › GL integration › Location</td>
+<td>42–124</td>
+<td>Settings › Data &amp; integrations › ERP and GL</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › GL integration › GL export</td>
+<td>42–124</td>
+<td>Settings › Data &amp; integrations › ERP and GL</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Location manager</td>
+<td>125–272</td>
+<td>Settings › Organization</td>
+<td>Locations are organizational structure</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Configuration › Location manager › Create/Edit location</td>
+<td>0–41</td>
+<td>Settings › Organization</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Match rules and sets</td>
+<td>273–1,007</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Match rules and sets › Match rule sets</td>
+<td>273–1,007</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Match rules and sets › Create/Edit match rule</td>
+<td>273–1,007</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Operational structure manager</td>
+<td>273–1,007</td>
+<td>Settings › Organization</td>
+<td>Hierarchies of accounts and locations are organizational
+structure</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Configuration › Operational structure manager › Edit hierarchy</td>
+<td>273–1,007</td>
+<td>Settings › Organization</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Operational structure manager › Roles</td>
+<td>125–272</td>
+<td>Settings › Organization</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Reference definitions</td>
+<td>125–272</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Reference definitions › Create/Edit reference
+definition</td>
+<td>42–124</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › SmartResolve procedures</td>
+<td>125–272</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › SmartResolve procedures › Create/Edit SmartResolve
+procedure</td>
+<td>125–272</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Transaction criteria</td>
+<td>273–1,007</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Transaction criteria › Create/Edit transaction
+criteria</td>
+<td>125–272</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Configuration › Transaction criteria › Create/Edit expert
+transaction criteria</td>
+<td>125–272</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Tasks</td>
+<td>no match</td>
+<td>Matching › Jobs</td>
+<td>Job history and running jobs are checked daily by the person running
+Match; keep in the task area</td>
+<td>usage</td>
+</tr>
+<tr>
+<td>Tasks › Task History</td>
+<td>1,008–41,234</td>
+<td>Matching › Jobs</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Tasks › Task History › View Task</td>
+<td>273–1,007</td>
+<td>Matching › Jobs</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Tasks › Task History › Undo</td>
+<td>42–124</td>
+<td>Matching › Jobs</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Tasks › Task History › Launch task</td>
+<td>no match</td>
+<td>Matching › Jobs</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Tasks › Running</td>
+<td>273–1,007</td>
+<td>Matching › Jobs</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Tasks › Recurring</td>
+<td>273–1,007</td>
+<td>Matching › Jobs</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Tasks › Recurring › Edit recurring task</td>
+<td>0–41</td>
+<td>Matching › Jobs</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Tasks › Scheduler</td>
+<td>0–41</td>
+<td>Settings › Data &amp; integrations › Jobs</td>
+<td>Scheduling is setup</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Reports</td>
+<td>no match</td>
+<td>Reports › Matching</td>
+<td>One reporting area</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Reports › Standard reports (Reports screen)</td>
+<td>no match</td>
+<td>Reports › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Reports › Legacy reports</td>
+<td>273–1,007</td>
+<td>Reports › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Reports › Legacy reports › Manage Folders</td>
+<td>0–41</td>
+<td>Reports › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list)</td>
+<td>273–1,007</td>
+<td>Settings › Module configuration › Matching</td>
+<td>Reference data and import rules are configuration</td>
+<td>goal</td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Account manager</td>
+<td>125–272</td>
+<td>Management › Accounts &amp; structure</td>
+<td>Account maintenance belongs with the other account lists</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › ACH</td>
+<td>0 views</td>
+<td>Settings › Data &amp; integrations › Banks</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › ACH › Configuration</td>
+<td>42–124</td>
+<td>Settings › Data &amp; integrations › Banks</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › ACH › Records</td>
+<td>no match</td>
+<td>Settings › Data &amp; integrations › Banks</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › BAI configuration</td>
+<td>125–272</td>
+<td>Settings › Data &amp; integrations › Banks</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › BAI configuration › Codes</td>
+<td>125–272</td>
+<td>Settings › Data &amp; integrations › Banks</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › BAI configuration ›
+Mapping</td>
+<td>42–124</td>
+<td>Settings › Data &amp; integrations › Banks</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Calendars</td>
+<td>125–272</td>
+<td>Settings › Calendars &amp; periods</td>
+<td>Four Match calendars join the Close and Certification calendars</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Calendars › Business day
+calendar</td>
+<td>125–272</td>
+<td>Settings › Calendars &amp; periods</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Calendars › Fiscal
+calendars</td>
+<td>42–124</td>
+<td>Settings › Calendars &amp; periods</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Calendars › Out of office
+schedules</td>
+<td>no match</td>
+<td>Settings › Calendars &amp; periods</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Calendars › GL calendars</td>
+<td>no match</td>
+<td>Settings › Calendars &amp; periods</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Calendars › Scheduling
+calendars</td>
+<td>42–124</td>
+<td>Settings › Calendars &amp; periods</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Duplicate checking
+definitions</td>
+<td>42–124</td>
+<td>Settings › Data &amp; integrations › Imports</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Duplicate checking definitions
+› Create a new duplicate checking definition</td>
+<td>0–41</td>
+<td>Settings › Data &amp; integrations › Imports</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Duplicate checking definitions
+› Item Edit</td>
+<td>0–41</td>
+<td>Settings › Data &amp; integrations › Imports</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Email template manager</td>
+<td>no match</td>
+<td>Settings › System › Notifications</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Email template manager › Create
+a new email template</td>
+<td>no match</td>
+<td>Settings › System › Notifications</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Import translations</td>
+<td>125–272</td>
+<td>Settings › Data &amp; integrations › Imports</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Import translations › Edit
+import transaction</td>
+<td>125–272</td>
+<td>Settings › Data &amp; integrations › Imports</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Import validations</td>
+<td>125–272</td>
+<td>Settings › Data &amp; integrations › Imports</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Import validations › Create new
+import validation</td>
+<td>0–41</td>
+<td>Settings › Data &amp; integrations › Imports</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Import validations › Item
+Edit</td>
+<td>125–272</td>
+<td>Settings › Data &amp; integrations › Imports</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Information setup</td>
+<td>273–1,007</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Information setup › Case
+error</td>
+<td>273–1,007</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Information setup › Source
+type</td>
+<td>125–272</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Information setup › Transaction
+type</td>
+<td>125–272</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Information setup › Title
+templates</td>
+<td>125–272</td>
+<td>Settings › Module configuration › Matching</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Masking definitions</td>
+<td>no match</td>
+<td>Settings › System › Application</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Unattached contacts</td>
+<td>42–124</td>
+<td>Settings › Users &amp; access › Users</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Audits (Admin in the feature list) › Unattached contacts › Create
+unattached contact</td>
+<td>no match</td>
+<td>Settings › Users &amp; access › Users</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Preferences</td>
+<td>273–1,007</td>
+<td>User menu › Preferences</td>
+<td>Personal settings</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>no match</td>
+<td>Settings › Users &amp; access</td>
+<td>Merges with the other user-management locations</td>
+<td>goal</td>
+</tr>
+<tr>
+<td>Security › Sector manager</td>
+<td>125–272</td>
+<td>Settings › Organization</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Security › Sector manager › Edit Item</td>
+<td>42–124</td>
+<td>Settings › Organization</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Security › Security profiles</td>
+<td>125–272</td>
+<td>Settings › Users &amp; access › Profiles</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Security › Security profiles › Create security profile</td>
+<td>0–41</td>
+<td>Settings › Users &amp; access › Profiles</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Security › Security profiles › Edit security profile</td>
+<td>125–272</td>
+<td>Settings › Users &amp; access › Profiles</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Security › User group manager</td>
+<td>42–124</td>
+<td>Settings › Users &amp; access › Groups</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Security › User group manager › Edit Item</td>
+<td>42–124</td>
+<td>Settings › Users &amp; access › Groups</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Security › User permissions</td>
+<td>no match</td>
+<td>Settings › Users &amp; access › Permissions &amp; roles</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Security › User permissions › Edit user permissions</td>
+<td>no match</td>
+<td>Settings › Users &amp; access › Permissions &amp; roles</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Daily Reconciliations</td>
+<td>125–272</td>
+<td>Matching › Daily reconciliations</td>
+<td>Optional add-on; stays with matching work</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Archive</td>
+<td>no match</td>
+<td>Settings › System › Archive</td>
+<td>Archived data is administration</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Archive › Transactions</td>
+<td>42–124</td>
+<td>Settings › System › Archive</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Archive › Reconciliations</td>
+<td>no match</td>
+<td>Settings › System › Archive</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Archive › Reconciliations › Single reconciliations</td>
+<td>0–41</td>
+<td>Settings › System › Archive</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Archive › Reconciliations › Group reconciliations</td>
+<td>0–41</td>
+<td>Settings › System › Archive</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Archive › Daily reconciliations</td>
+<td>0–41</td>
+<td>Settings › System › Archive</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Archive › Amortization/depreciation</td>
+<td>0–41</td>
+<td>Settings › System › Archive</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Archive › Amortization/depreciation › Schedule</td>
+<td>0–41</td>
+<td>Settings › System › Archive</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Archive › Amortization/depreciation › Details</td>
+<td>0–41</td>
+<td>Settings › System › Archive</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Archive › Amortization/depreciation › Attachments</td>
+<td>0–41</td>
+<td>Settings › System › Archive</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Archive › Amortization/depreciation › Audit Trail</td>
+<td>0 views</td>
+<td>Settings › System › Archive</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="certification">Certification</h3>
+<table>
+<thead>
+<tr>
+<th>Current</th>
+<th>Visitors</th>
+<th>Proposed home</th>
+<th>Why</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reconciliations</td>
+<td>no match</td>
+<td>Reconciliations</td>
+<td>The core of the product; keep the role lists</td>
+<td>session</td>
+</tr>
+<tr>
+<td>Reconciliations › Reconciliations Dashboard</td>
+<td>1,008–41,234</td>
+<td>Reconciliations › Dashboard</td>
+<td>Module landing</td>
+<td>usage</td>
+</tr>
+<tr>
+<td>Reconciliations › Reconciliations</td>
+<td>no match</td>
+<td>Reconciliations › My reconciliations</td>
+<td>Prepare, review and approve lists become one list filtered by my
+role and status</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Reconciliations › Reconciliations › Preparation</td>
+<td>no match</td>
+<td>Reconciliations › My reconciliations</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Reconciliations › Reconciliations › Preparation › Bulk
+Reconciliations</td>
+<td>1,008–41,234</td>
+<td>Reconciliations › Bulk reconciliations</td>
+<td>Distinct task with its own queue</td>
+<td>usage</td>
+</tr>
+<tr>
+<td>Reconciliations › Reconciliations › Preparation › Open Items
+List</td>
+<td>1,008–41,234</td>
+<td>Reconciliations › Open items</td>
+<td>Cross-cutting list</td>
+<td>usage</td>
+</tr>
+<tr>
+<td>Reconciliations › Reconciliations › Preparation › Reconciliation
+Detail</td>
+<td>1,008–41,234</td>
+<td>Reconciliations › Reconciliation</td>
+<td>One record view reached from every list</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Reconciliations › Reconciliations › Review</td>
+<td>no match</td>
+<td>Reconciliations › My reconciliations</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Reconciliations › Reconciliations › Review › Reconciliation
+Detail</td>
+<td>1,008–41,234</td>
+<td>Reconciliations › Reconciliation</td>
+<td>Same record view as under Preparation</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Reconciliations › Reconciliations › Approve</td>
+<td>no match</td>
+<td>Reconciliations › My reconciliations</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Reconciliations › Administration</td>
+<td>no match</td>
+<td>Reconciliations › My accounts</td>
+<td>Viewing your accounts and requesting changes is user work, not
+administration</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Reconciliations › Administration › Reconciliations</td>
+<td>no match</td>
+<td>Reconciliations › My accounts</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Reconciliations › Administration › Change request history</td>
+<td>273–1,007</td>
+<td>Reconciliations › My accounts</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Reconciliations › Administration › Process Queue</td>
+<td>1,008–41,234</td>
+<td>Management › Oversight › Jobs and queues</td>
+<td>Watching queued bulk jobs is oversight</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Reconciliations › Reconciliation reports</td>
+<td>no match</td>
+<td>Reports › Reconciliations</td>
+<td>One reporting area</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Journal Entries</td>
+<td>no match</td>
+<td>Journal Entries</td>
+<td>Out from under Certification, its own task area</td>
+<td>goal</td>
+</tr>
+<tr>
+<td>Journal Entries › Journal Entries Dashboard</td>
+<td>1,008–41,234</td>
+<td>Journal Entries › Dashboard</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Journal Entries › Journal Entries Dashboard › Edit Journal
+Entry</td>
+<td>1,008–41,234</td>
+<td>Journal Entries › Journal entry</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Journal Entries › Journal Entries Dashboard › Import History</td>
+<td>1,008–41,234</td>
+<td>Journal Entries › Import history</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Journal Entries › Recurring Journal Entries</td>
+<td>1,008–41,234</td>
+<td>Journal Entries › Recurring</td>
+<td>Also listed under Management Analysis today</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Journal Entries › Recurring Journal Entries › Edit Item</td>
+<td>273–1,007</td>
+<td>Journal Entries › Recurring</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Journal Entries › ERP Open Item Management</td>
+<td>no match</td>
+<td>Journal Entries › ERP open items</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Journal Entries › JE reports</td>
+<td>no match</td>
+<td>Reports › Journal Entries</td>
+<td>One reporting area</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>QA</td>
+<td>no match</td>
+<td>Reconciliations › QA review</td>
+<td>Open question whether QA is a subset of reconciliations or its own
+area</td>
+<td>session</td>
+</tr>
+<tr>
+<td>QA › QA Dashboard</td>
+<td>1,008–41,234</td>
+<td>Reconciliations › QA review</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>QA › Perform QA Reviews</td>
+<td>1,008–41,234</td>
+<td>Reconciliations › QA review</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>QA › View Completed QA Reviews</td>
+<td>no match</td>
+<td>Reconciliations › QA review</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>QA › QA reports</td>
+<td>no match</td>
+<td>Reports › Reconciliations</td>
+<td>One reporting area</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Management</td>
+<td>no match</td>
+<td>Management</td>
+<td>Split into oversight (managers) and settings (administrators)</td>
+<td>session</td>
+</tr>
+<tr>
+<td>Management › Management Dashboard</td>
+<td>1,008–41,234</td>
+<td>Management › Oversight › Reconciliation status</td>
+<td>The admin's home becomes the manager's view</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Management › Management Dashboard › Reconciliation Statistics</td>
+<td>1,008–41,234</td>
+<td>Management › Oversight › Reconciliation status</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Analysis</td>
+<td>no match</td>
+<td>Management › Oversight</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Analysis › Account Metrics</td>
+<td>no match</td>
+<td>Management › Oversight › Reconciliation status</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Analysis › Account Metrics › Open Items List</td>
+<td>no match</td>
+<td>Reconciliations › Open items</td>
+<td>Duplicate of the preparer's list</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Management › Analysis › Account Metrics › Reconciliation List</td>
+<td>1,008–41,234</td>
+<td>Reconciliations › My reconciliations</td>
+<td>Duplicate of the role lists, scoped wider</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Management › Analysis › Account Metrics › Reconciliation Detail</td>
+<td>1,008–41,234</td>
+<td>Reconciliations › Reconciliation</td>
+<td>Same record view as under Preparation</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Management › Analysis › Journal Entry Metrics</td>
+<td>no match</td>
+<td>Management › Oversight › Journal entry status</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Analysis › Journal Entry Metrics › Journal Entries
+Dashboard</td>
+<td>1,008–41,234</td>
+<td>Journal Entries › Dashboard</td>
+<td>Duplicate of the JE dashboard</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Management › Analysis › Journal Entry Metrics › Recurring Entries
+Dashboard</td>
+<td>1,008–41,234</td>
+<td>Journal Entries › Recurring</td>
+<td>Duplicate</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Management › Analysis › Reporting (Analysis)</td>
+<td>no match</td>
+<td>Reports › Reconciliations</td>
+<td>One reporting area</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Management › Maintenance</td>
+<td>no match</td>
+<td>Management › Accounts &amp; structure</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Maintenance › Account Maintenance</td>
+<td>no match</td>
+<td>Management › Accounts &amp; structure › Accounts</td>
+<td>Assigning accounts and approving changes is the manager's job</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Management › Maintenance › Account Maintenance › Dynamic Account
+Maintenance</td>
+<td>273–1,007</td>
+<td>Settings › Module configuration › Reconciliations › Automation</td>
+<td>A rules engine, set up once; the assessment flags its setup
+burden</td>
+<td>assessment</td>
+</tr>
+<tr>
+<td>Management › Maintenance › User Maintenance</td>
+<td>no match</td>
+<td>Settings › Users &amp; access</td>
+<td>Merges with the other user-management locations</td>
+<td>goal</td>
+</tr>
+<tr>
+<td>Management › Maintenance › User Maintenance › User List</td>
+<td>273–1,007</td>
+<td>Settings › Users &amp; access › Users</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Maintenance › User Maintenance › Add New User</td>
+<td>1,008–41,234</td>
+<td>Settings › Users &amp; access › Users</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Maintenance › User Maintenance › Email Users</td>
+<td>no match</td>
+<td>Management › Team › Notify users</td>
+<td>Messaging the team is a manager action</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Management › Maintenance › User Maintenance › User Groups</td>
+<td>273–1,007</td>
+<td>Settings › Users &amp; access › Groups</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Maintenance › News &amp; Documentation</td>
+<td>no match</td>
+<td>Management › Team › Notices and documents</td>
+<td>Admin-posted news and policies surface on the landing page</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Management › System Management</td>
+<td>no match</td>
+<td>Settings › System › Maintenance jobs</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › System Management › Global Lock Down</td>
+<td>no match</td>
+<td>Settings › Users &amp; access › Permissions &amp; roles</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › System Management › Populate Reporting Tables</td>
+<td>no match</td>
+<td>Settings › System › Maintenance jobs</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › System Management › Reset Next Account Dates</td>
+<td>no match</td>
+<td>Settings › System › Maintenance jobs</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Management › System Management › Update FX Reconciliations</td>
+<td>no match</td>
+<td>Settings › System › Maintenance jobs</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Management › System Management › Update High Low Balances</td>
+<td>no match</td>
+<td>Settings › System › Maintenance jobs</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Management › System Management › About</td>
+<td>no match</td>
+<td>Settings › System › Application</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › System Management › Reconciliations</td>
+<td>no match</td>
+<td>Settings › Module configuration › Reconciliations › Automation</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › System Management › Schedules</td>
+<td>no match</td>
+<td>Settings › Data &amp; integrations › Jobs</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › System Management › Security</td>
+<td>no match</td>
+<td>Settings › Users &amp; access › Profiles</td>
+<td>Profiles, profile groups and roles merge with the other
+user-management locations</td>
+<td>goal</td>
+</tr>
+<tr>
+<td>Management › System Management › Security › Roles: Maintain</td>
+<td>125–272</td>
+<td>Settings › Users &amp; access › Permissions &amp; roles</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › System Management › Security › Roles: Rights</td>
+<td>273–1,007</td>
+<td>Settings › Users &amp; access › Permissions &amp; roles</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Configuration</td>
+<td>no match</td>
+<td>Settings › Module configuration › Reconciliations › Templates &amp;
+results</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Configuration › Application Configuration</td>
+<td>no match</td>
+<td>Settings › System › Application</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Configuration › FX Conversion Configuration</td>
+<td>no match</td>
+<td>Settings › Module configuration › Reconciliations › Templates &amp;
+results</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Configuration › Application Configuration Data</td>
+<td>no match</td>
+<td>Settings › System › Application</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Configuration › Account Configuration Data</td>
+<td>no match</td>
+<td>Settings › Module configuration › Reconciliations › Templates &amp;
+results</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Configuration › Scheduling Configuration Data</td>
+<td>125–272</td>
+<td>Settings › Calendars &amp; periods</td>
+<td>Role schedules and frequencies are calendar rules</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Management › Configuration › Organizational Configuration Data</td>
+<td>no match</td>
+<td>Settings › Organization</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Configuration › Notifications Configuration</td>
+<td>no match</td>
+<td>Settings › System › Notifications</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Configuration › Quality Assurance</td>
+<td>no match</td>
+<td>Settings › Module configuration › Reconciliations › Templates &amp;
+results</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Configuration › Reconciliation Results</td>
+<td>no match</td>
+<td>Settings › Module configuration › Reconciliations › Templates &amp;
+results</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Configuration › Template Configuration</td>
+<td>no match</td>
+<td>Settings › Module configuration › Reconciliations › Templates &amp;
+results</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Configuration › Posting Destination</td>
+<td>125–272</td>
+<td>Settings › Data &amp; integrations › ERP and GL</td>
+<td>Posting destinations are integration setup</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Management › Configuration › Binder Configuration</td>
+<td>no match</td>
+<td>Reports › Binders</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › Configuration › System Configuration</td>
+<td>no match</td>
+<td>Settings › System › Application</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › JE Configuration</td>
+<td>no match</td>
+<td>Settings › Module configuration › Journal Entries</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › JE Configuration › Active Periods</td>
+<td>273–1,007</td>
+<td>Management › Periods</td>
+<td>Opening posting periods is a management act; one place across
+modules</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Management › JE Configuration › Approver Routing</td>
+<td>125–272</td>
+<td>Settings › Module configuration › Journal Entries</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Management › JE Configuration › Approver Routing Tables</td>
+<td>125–272</td>
+<td>Settings › Module configuration › Journal Entries</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Management › JE Configuration › Field Definitions</td>
+<td>273–1,007</td>
+<td>Settings › Module configuration › Journal Entries</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Management › JE Configuration › Pick List Template Mapping</td>
+<td>no match</td>
+<td>Settings › Module configuration › Journal Entries</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Management › JE Configuration › Impact Indicators</td>
+<td>no match</td>
+<td>Settings › Module configuration › Journal Entries</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Management › JE Configuration › Pick Lists</td>
+<td>125–272</td>
+<td>Settings › Module configuration › Journal Entries</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Management › JE Configuration › Template Access Control</td>
+<td>no match</td>
+<td>Settings › Users &amp; access › Permissions &amp; roles</td>
+<td>Who may use which template is an access rule</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Management › JE Configuration › ERP Open Item Management</td>
+<td>no match</td>
+<td>Settings › Data &amp; integrations › ERP and GL</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › JE Configuration › JE Templates</td>
+<td>273–1,007</td>
+<td>Settings › Module configuration › Journal Entries</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Management › JE Configuration › JE Binders</td>
+<td>no match</td>
+<td>Reports › Binders</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Management › JE Configuration › Data Profiles</td>
+<td>125–272</td>
+<td>Settings › Users &amp; access › Profiles</td>
+<td>Data profiles decide which accounts a user sees</td>
+<td>assumption</td>
+</tr>
+</tbody>
+</table>
+<h3 id="compliance-1">Compliance</h3>
+<table>
+<thead>
+<tr>
+<th>Current</th>
+<th>Visitors</th>
+<th>Proposed home</th>
+<th>Why</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Control Hierarchy Tree</td>
+<td>no match</td>
+<td>Compliance › Controls</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Results</td>
+<td>0 views</td>
+<td>Compliance › Results › Control results</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Results › Issue</td>
+<td>no match</td>
+<td>Compliance › Results › Assessments &amp; issues</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Results › Code of Conduct</td>
+<td>no match</td>
+<td>Compliance › Results › Assessments &amp; issues</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Results › Control Evaluations</td>
+<td>no match</td>
+<td>Compliance › Results › Control results</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Results › Control Tests</td>
+<td>no match</td>
+<td>Compliance › Results › Control results</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Results › Summary Tests</td>
+<td>no match</td>
+<td>Compliance › Results › Control results</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Results › Summary Tests › Related Controls</td>
+<td>no match</td>
+<td>Compliance › Results › Control results</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Results › Risk Assessments</td>
+<td>no match</td>
+<td>Compliance › Results › Assessments &amp; issues</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Results › Risk Assessments › Risk Assessment</td>
+<td>no match</td>
+<td>Compliance › Results › Assessments &amp; issues</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Results › Remediation</td>
+<td>no match</td>
+<td>Compliance › Results › Assessments &amp; issues</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Results › Exception</td>
+<td>no match</td>
+<td>Compliance › Results › Assessments &amp; issues</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Results › 302 Certification</td>
+<td>no match</td>
+<td>Compliance › Results › Assessments &amp; issues</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Results › Management Sub-certification</td>
+<td>no match</td>
+<td>Compliance › Results › Assessments &amp; issues</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Results › Control</td>
+<td>no match</td>
+<td>Compliance › Results › Control results</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Results › Control › View (Tasks)</td>
+<td>no match</td>
+<td>Compliance › Results › Control results</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Surveys</td>
+<td>0 views</td>
+<td>Compliance › Surveys</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Surveys › Risk Assessments</td>
+<td>no match</td>
+<td>Compliance › Surveys</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Surveys › Deployment</td>
+<td>no match</td>
+<td>Compliance › Surveys</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Surveys › Deployment › Risk Assessment Deployment Details</td>
+<td>no match</td>
+<td>Compliance › Surveys</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Surveys › Deployment › Risk Assessments Results For Deployment</td>
+<td>no match</td>
+<td>Compliance › Surveys</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Scoping</td>
+<td>0 views</td>
+<td>Compliance › Scoping</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Scoping › Scoping Rule</td>
+<td>no match</td>
+<td>Compliance › Scoping</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Scoping › Scoping Profile</td>
+<td>no match</td>
+<td>Compliance › Scoping</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Code of Conduct</td>
+<td>273–1,007</td>
+<td>Compliance › Code of conduct</td>
+<td>Jenny's landing page in UAT; the one part of Compliance with real
+visits</td>
+<td>usage</td>
+</tr>
+<tr>
+<td>Code of Conduct › Code of Conduct</td>
+<td>no match</td>
+<td>Compliance › Code of conduct</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Code of Conduct › Code of Conduct › View Audit (Audit Trail
+Summary)</td>
+<td>no match</td>
+<td>Compliance › Code of conduct</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Setup</td>
+<td>0 views</td>
+<td>Settings › Module configuration › Compliance › Hierarchy &amp;
+controls</td>
+<td>Setup is configuration</td>
+<td>goal</td>
+</tr>
+<tr>
+<td>Setup › User Defined Fields</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Reference data</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › COSO Principles</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Hierarchy &amp;
+controls</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › Profiles</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Reference data</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › Profiles › Profile Detail</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Reference data</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › Permissions</td>
+<td>no match</td>
+<td>Settings › Users &amp; access › Permissions &amp; roles</td>
+<td>Also under the user menu Admin</td>
+<td>duplicate</td>
+</tr>
+<tr>
+<td>Setup › Assertions</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Hierarchy &amp;
+controls</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › Assertions › Assertion</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Hierarchy &amp;
+controls</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › Accounts</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Reference data</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › Accounts › Account</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Reference data</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › References</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Reference data</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › Business Units</td>
+<td>no match</td>
+<td>Settings › Organization</td>
+<td>Business units are organizational structure</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Setup › Control Categories</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Hierarchy &amp;
+controls</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › Control Categories › Control Category</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Hierarchy &amp;
+controls</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › Consoles</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Reference data</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › Control Hierarchy Manager</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Hierarchy &amp;
+controls</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › Control Hierarchy Snapshot</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Hierarchy &amp;
+controls</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › Compliance Binder</td>
+<td>no match</td>
+<td>Reports › Binders</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › List of Values</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Reference data</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › List of Values › System Group Values</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Reference data</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › Disclosure Committee</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Reference data</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Setup › Action Plan Control Hierarchy</td>
+<td>no match</td>
+<td>Settings › Module configuration › Compliance › Hierarchy &amp;
+controls</td>
+<td>follows its parent</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="removals-and-merges">Removals and merges</h2>
+<p><strong>Removed from customer navigation</strong></p>
+<ul>
+<li>Global shell › Top tabs › Disclosure Management — Chris: not
+something customers see</li>
+<li>Global shell › Top tabs › Workday — Chris: does not know why it
+appears</li>
+<li>Close › Close › Collaboration — Zero page views; only a task flag in
+the training material</li>
+<li>Close › Close › Legacy Consoles — Replaced by Close status under
+Management</li>
+</ul>
+<p><strong>Merged because the same screen is reachable from more than
+one place</strong></p>
+<ul>
+<li>Management › Team › Proxies ← Close › Home › Proxy Manager; Close ›
+Configuration › User Management › Proxy Administration</li>
+<li>Settings › Data &amp; integrations › Imports ← Close › Close › Setup
+› Close Import Manager; Close › Configuration › Import Manager</li>
+<li>Reconciliations › Reconciliation ← Certification › Reconciliations ›
+Reconciliations › Preparation › Reconciliation Detail; Certification ›
+Reconciliations › Reconciliations › Review › Reconciliation Detail;
+Certification › Management › Analysis › Account Metrics › Reconciliation
+Detail</li>
+<li>Reports › Reconciliations ← Certification › Reconciliations ›
+Reconciliation reports; Certification › QA › QA reports; Certification ›
+Management › Analysis › Reporting (Analysis)</li>
+<li>Journal Entries › Recurring ← Certification › Journal Entries ›
+Recurring Journal Entries; Certification › Management › Analysis ›
+Journal Entry Metrics › Recurring Entries Dashboard</li>
+</ul>
+<h2 id="open-questions">Open questions</h2>
+<ol type="1">
+<li>Is Management visible to every user, or only to people with manager
+or administrator permissions? The session raised it; the answer shapes
+whether Management is a tab or a role view.</li>
+<li>Is QA review part of Reconciliations or its own area? The board
+sticky asks the same.</li>
+<li>Should Close be a top-level area for every customer, or appear only
+when Close is licensed? Some customers never open it. Related: why is
+Close hard to configure or treated as an add-on?</li>
+<li>Periods and calendars are split here between Management (open and
+close periods) and Settings (calendar rules). Can one period context
+work across modules with different calendars? The research flags this as
+a prerequisite for cross-module dashboards.</li>
+<li>Which items are duplicates to delete rather than merge? Jenny is
+listing the pages the user-management work retires; that list overrides
+the merges proposed here for Users &amp; access.</li>
+<li>Match opens tabs where the side navigation implies a page change. Is
+fixing that a quick win Trintech will take, or does Matching keep tabs
+inside Transactions by design?</li>
+<li>Compliance has no Success Center material and almost no UAT traffic.
+Is "unchanged inside" acceptable, or does the Code of Conduct landing
+suggest a different first screen?</li>
+<li>What do the Disclosure Management and Workday tabs do, and who sees
+them? Chris did not know.</li>
+<li>Reports will be shaped by the reporting and dashboards proposal.
+This draft only gathers today's report entry points into one area and
+does not design it.</li>
+<li>Match Audits (the feature list calls it Admin), Daily
+Reconciliations and Archive were not in Jenny's menu in UAT. Which
+customers see them?</li>
+</ol>
+<h2 id="coverage">Coverage</h2>
+<p>567 boxes from the sitemap are mapped. By visitors: 1,008–41,234: 62,
+273–1,007: 52, 125–272: 59, 42–124: 45, 0–41: 44, no match: 294, 0
+views: 11.</p>
+</body>
+</html>
