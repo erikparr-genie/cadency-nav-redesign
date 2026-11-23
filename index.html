@@ -85,11 +85,11 @@ ol.decide li{margin:12px 0;color:var(--ink2)}ol.decide li b{color:var(--ink)}
 <section class="slide" id="s1">
   <div class="n">1 / 7</div>
   <div class="grow">
-    <div class="kicker">Cadency navigation redesign · Nov 20, 2026</div>
+    <div class="kicker">Cadency navigation redesign · Nov 23, 2026</div>
     <h1>Cadency, organized around the work.</h1>
-    <p class="lead">Today's navigation mirrors modules and permissions. This proposal regroups every screen Cadency has around what accountants, managers and administrators are trying to do. No screen is invented except one: Home.</p>
+    <p class="lead">Today's navigation mirrors modules and permissions. This proposal regroups every screen Cadency has around what accountants, managers and administrators are trying to do. The one new screen, Home, is the landing page already designed for the Florence release.</p>
     <div class="row">
-      <span class="area">Home</span><span class="area">Reconciliations</span><span class="area">Matching</span><span class="area">Journal Entries</span><span class="area">Close</span><span class="area t">Compliance</span><span class="area t">Reports</span><span class="area t">Management</span><span class="area p">Settings</span>
+      <span class="area">Home</span><span class="area">Reconciliations</span><span class="area">Matching</span><span class="area">Journal Entries</span><span class="area">Close</span><span class="area t">Compliance</span><span class="area t">Reports</span><span class="area p">Admin</span>
     </div>
     <div class="keyline"><i style="background:var(--blue-soft);border:1.5px solid var(--blue)"></i>daily work <i style="background:var(--teal-soft);border:1.5px solid var(--teal)"></i>oversight and controls <i style="background:var(--purple-soft);border:1.5px solid var(--purple)"></i>setup</div>
   </div>
@@ -108,8 +108,8 @@ ol.decide li{margin:12px 0;color:var(--ink2)}ol.decide li b{color:var(--ink)}
   <div class="cols c4" style="margin-top:20px">
     <div class="card"><div class="stat">0<small>top-level tabs for Journal Entry. It lives in Certification's side menu, yet its dashboard is in the top usage tier.</small></div></div>
     <div class="card"><div class="stat">19<small>places to manage users, spread over every module and the user menu</small></div></div>
-    <div class="card"><div class="stat">11<small>entry points to Reports, scattered across the modules</small></div></div>
-    <div class="card"><div class="stat">326<small>of 560 menu items are setup: configuration, rules, reference data, imports, security, filed inside the work modules</small></div></div>
+    <div class="card"><div class="stat">10<small>menu items that open reports, scattered across the modules</small></div></div>
+    <div class="card"><div class="stat">363<small>of 560 menu items are setup: configuration, rules, reference data, imports, security, accounts and periods, filed inside the work modules</small></div></div>
   </div>
   <div class="cols c2" style="margin-top:22px">
     <div class="quote">A user can arrive in Close when the work they need is in Certification. Users move between different views to bring together their tasks, reconciliations and progress.<span>Cadency Dashboard Research, Nov 19, 2026</span></div>
@@ -123,8 +123,8 @@ ol.decide li{margin:12px 0;color:var(--ink2)}ol.decide li b{color:var(--ink)}
   <div class="n">3 / 7</div>
   <div class="grow">
   <div class="kicker">Proposal</div>
-  <h2>Nine areas, grouped by who they serve.</h2>
-  <p class="lead">The same screens, regrouped. Nine areas in total, but nobody uses all nine: the five blue areas are the accountant's, a manager lives in Management and Reports, an administrator in Settings.</p>
+  <h2>Eight areas, grouped by who they serve.</h2>
+  <p class="lead">The same screens, regrouped. Eight areas in total, but nobody uses all eight: the five blue areas are the accountant's; Reports and Compliance serve managers, auditors and compliance leads; Admin serves the three admin roles. Managers get no tab of their own: the status views they use today sit inside each area, and the landing page links to them.</p>
   <div class="before-after">
     <div class="card">
       <div class="who">Today <span>· four modules, each with its own menu</span></div>
@@ -139,15 +139,15 @@ ol.decide li{margin:12px 0;color:var(--ink2)}ol.decide li b{color:var(--ink)}
       <div class="who">Daily work <span>· accountant</span></div>
       <div class="row"><span class="area">Home</span><span class="area">Reconciliations</span><span class="area">Matching</span><span class="area">Journal Entries</span><span class="area">Close</span></div>
       <div class="who">Oversight and controls <span>· accounting manager, finance leader, auditor, compliance lead</span></div>
-      <div class="row"><span class="area t">Reports</span><span class="area t">Management</span><span class="area t">Compliance</span></div>
-      <div class="who">Setup <span>· financial systems administrator</span></div>
-      <div class="row"><span class="area p">Settings</span></div>
+      <div class="row"><span class="area t">Reports</span><span class="area t">Compliance</span></div>
+      <div class="who">Setup <span>· user admins, system admins, module admins</span></div>
+      <div class="row"><span class="area p">Admin</span></div>
       <div class="who">From every screen</div>
       <div class="row"><span class="area g">Help panel</span><span class="area g">User menu</span></div>
     </div>
   </div>
   </div>
-  <div class="foot"><a href="mockup.html">Click through this structure in today's Cadency look</a><span>Home is the one new screen: the landing page the research asked for, replacing the R2R Console. Area names are working names; renaming Certification to Reconciliations, or Match to Matching, is its own decision.</span></div>
+  <div class="foot"><a href="mockup.html">Click through this structure in today's Cadency look</a><span>Home is the Florence landing page, replacing the R2R Console. Reports is one tab with nothing designed inside it; the reporting workstream owns that. Matching keeps tabs on the page, as Match does today. Area names are working names.</span></div>
 </section>
 
 <section class="slide" id="s4">
@@ -155,51 +155,51 @@ ol.decide li{margin:12px 0;color:var(--ink2)}ol.decide li b{color:var(--ink)}
   <div class="grow">
   <div class="kicker">Where today's menu items go</div>
   <h2>Every item on the current sitemap has a home, or a reason to go.</h2>
-  <p class="lead">Rows are today's modules. Columns are the proposed areas. Each cell counts the menu items that move there; darker means more. Nothing is lost, and the setup items of every module collect under Settings.</p>
+  <p class="lead">Rows are today's modules. Columns are the proposed areas. Each cell counts the menu items that move there; darker means more. Nothing is lost, and the setup items of every module collect under Admin.</p>
   <div>
     <table class="mx">
-      <thead><tr><th class="r"></th><th>Home</th><th>Recon.</th><th>Matching</th><th>JEs</th><th>Close</th><th>Compl.</th><th>Reports</th><th>Mgmt</th><th>Settings</th><th>Help / menu</th><th>Removed</th><th class="tot">Total</th></tr></thead>
+      <thead><tr><th class="r"></th><th>Home</th><th>Recon.</th><th>Matching</th><th>JEs</th><th>Close</th><th>Compl.</th><th>Reports</th><th>Admin</th><th>Help / menu</th><th>Removed</th><th class="tot">Total</th></tr></thead>
       <tbody>
-        <tr><th class="r">Certification</th><td></td><td class="v2">45</td><td></td><td class="v1">9</td><td></td><td></td><td class="v1">8</td><td class="v2">34</td><td class="v3">107</td><td></td><td></td><td class="tot">203</td></tr>
-        <tr><th class="r">Match</th><td></td><td></td><td class="v2">42</td><td></td><td></td><td></td><td class="v1">4</td><td class="v1">1</td><td class="v3">121</td><td class="v1">1</td><td></td><td class="tot">169</td></tr>
-        <tr><th class="r">Close</th><td class="v1">1</td><td></td><td></td><td></td><td class="v1">17</td><td></td><td class="v1">7</td><td class="v1">19</td><td class="v3">67</td><td class="v1">3</td><td class="rm">3</td><td class="tot">117</td></tr>
-        <tr><th class="r">Compliance</th><td></td><td></td><td></td><td></td><td></td><td class="v2">27</td><td class="v1">1</td><td></td><td class="v1">22</td><td></td><td></td><td class="tot">50</td></tr>
-        <tr><th class="r">Top tabs, user menu</th><td class="v1">1</td><td class="v1">1</td><td class="v1">1</td><td></td><td></td><td class="v1">1</td><td class="v1">1</td><td></td><td class="v1">9</td><td class="v1">5</td><td class="rm">2</td><td class="tot">21</td></tr>
-        <tr><th class="r tot">Total</th><td class="tot">2</td><td class="tot">46</td><td class="tot">43</td><td class="tot">9</td><td class="tot">17</td><td class="tot">28</td><td class="tot">21</td><td class="tot">54</td><td class="tot">326</td><td class="tot">9</td><td class="tot">5</td><td class="tot">560</td></tr>
+        <tr><th class="r">Certification</th><td></td><td class="v2">55</td><td></td><td class="v1">15</td><td></td><td></td><td class="v1">4</td><td class="v3">129</td><td></td><td></td><td class="tot">203</td></tr>
+        <tr><th class="r">Match</th><td></td><td></td><td class="v2">42</td><td></td><td></td><td></td><td class="v1">4</td><td class="v3">122</td><td class="v1">1</td><td></td><td class="tot">169</td></tr>
+        <tr><th class="r">Close</th><td class="v1">1</td><td></td><td></td><td></td><td class="v2">28</td><td></td><td class="v1">1</td><td class="v3">81</td><td class="v1">3</td><td class="rm">3</td><td class="tot">117</td></tr>
+        <tr><th class="r">Compliance</th><td></td><td></td><td></td><td></td><td></td><td class="v2">28</td><td></td><td class="v1">22</td><td></td><td></td><td class="tot">50</td></tr>
+        <tr><th class="r">Top tabs, user menu</th><td class="v1">1</td><td class="v1">1</td><td class="v1">1</td><td></td><td></td><td class="v1">1</td><td class="v1">1</td><td class="v1">9</td><td class="v1">5</td><td class="rm">2</td><td class="tot">21</td></tr>
+        <tr><th class="r tot">Total</th><td class="tot">2</td><td class="tot">56</td><td class="tot">43</td><td class="tot">15</td><td class="tot">28</td><td class="tot">29</td><td class="tot">10</td><td class="tot">363</td><td class="tot">9</td><td class="tot">5</td><td class="tot">560</td></tr>
       </tbody>
     </table>
     <div class="cols c3" style="margin-top:22px">
-      <div class="card"><h3>Read it like this</h3><p>Certification's 203 items split four ways: reconciliation work stays together, Journal Entries becomes its own area, the manager's dashboards and account maintenance go to Management, and 107 configuration screens go to Settings.</p></div>
+      <div class="card"><h3>Read it like this</h3><p>Certification's 203 items split three ways: reconciliation work and the manager's status views stay together, Journal Entries becomes its own area, and 129 setup screens go to Admin, split by which admin holds them.</p></div>
       <div class="card"><h3>What counts as setup</h3><p>Configuration, rules, reference data, imports and security. In Match that is most of the menu, tuned by a few power users; moving it does not change their work.</p></div>
       <div class="card"><h3>Removed from customer navigation</h3><p>The Disclosure Management and Workday tabs, Close Collaboration (zero page views) and the Legacy Consoles. Five items. On the board, every screen also carries its Pendo visitor tier.</p></div>
     </div>
   </div>
   </div>
-  <div class="foot"><a href="https://www.figma.com/board/OrlyDEaz9z56cSYLQK0pqV/-Internal--Trintech-Discovery-Board?node-id=2692-3631">Full proposed sitemap on the Discovery Board</a><a href="sitemap.html">Interactive sitemap, current and proposed</a><span>Help panel and user menu sit outside the nine areas.</span></div>
+  <div class="foot"><a href="https://www.figma.com/board/OrlyDEaz9z56cSYLQK0pqV/-Internal--Trintech-Discovery-Board?node-id=2692-3631">Proposed sitemap on the Discovery Board (Nov 20 cut, before Admin was split by role)</a><a href="compare.html">Before and after, module by module</a><a href="sitemap.html">Interactive sitemap, current and proposed</a><span>Help panel and user menu sit outside the eight areas.</span></div>
 </section>
 
 <section class="slide" id="s5">
   <div class="n">5 / 7</div>
   <div class="grow">
   <div class="kicker">The two moves that carry it</div>
-  <h2>Managers get their own place. Shared things get one home.</h2>
+  <h2>Admin follows the rights. Shared things get one home.</h2>
   <div class="cols c2" style="margin-top:12px;align-items:start">
     <div class="card">
-      <h3>1 · Management, separate from Settings</h3>
-      <p>The research found two different people behind today's "Management" and "Configuration" menus: the accounting manager asking where work needs attention and who can move it, and the systems administrator asking what must be set up or fixed. The proposal gives each a home, so a manager can hold the people side without system-administrator rights.</p>
-      <p style="margin-top:16px;font-weight:600;color:var(--ink)">A manager checking what is due today</p>
-      <div class="path"><span class="lbl">Today</span><span class="step">Certification › Management › Management Dashboard</span><span class="step">Close › Consoles › Close Task Status</span><span class="step">Match › Dashboard</span><span class="sum">3 modules, 3 menus</span></div>
-      <div class="path"><span class="lbl">Proposed</span><span class="step t">Management › Oversight</span><span class="sum">1 area, 1 menu; the three dashboards sit side by side</span></div>
+      <h3>1 · One Admin tab, split by the three admin roles</h3>
+      <p>System admins configure the site, user admins manage users and permissions, module admins configure their module. Admin mirrors that: User admin (Users, Templates, Access, as in the User Management prototype), System admin and Module admin. Managers do not get a tab of their own. The status views they open today under Management now sit inside each area: Reconciliations › Dashboard, Close › Status, Journal Entries › Dashboard, and the bulk queue under Reconciliations. The landing page links to them.</p>
+      <p style="margin-top:16px;font-weight:600;color:var(--ink)">An administrator adding a user</p>
+      <div class="path"><span class="lbl">Today</span><span class="step">User menu › Admin › User management</span><span class="step">Certification › Management › User Maintenance</span><span class="step">Close › Configuration › User Management</span><span class="step">Match › Security</span><span class="sum">4 places to add a user</span></div>
+      <div class="path"><span class="lbl">Proposed</span><span class="step t">Admin › User admin › Users</span><span class="sum">1 place; users, groups and proxies from every module become one list</span></div>
     </div>
     <div class="card">
       <h3>2 · One home for each shared thing</h3>
       <p>Entry points today, against one place in the proposal.</p>
       <div class="one">
-        <span class="l">User management</span><b>19</b><span class="to">→ 1</span><span class="chip p">Settings</span>
-        <span class="l">Reports and binders</span><b>11</b><span class="to">→ 1</span><span class="chip t">Reports</span>
-        <span class="l">Calendars</span><b>4</b><span class="to">→ 1</span><span class="chip p">Settings</span>
-        <span class="l">Permissions</span><b>3</b><span class="to">→ 1</span><span class="chip p">Settings</span>
-        <span class="l">Periods</span><b>2</b><span class="to">→ 1</span><span class="chip t">Management</span>
+        <span class="l">Menu items that open user screens</span><b>19</b><span class="to">→ 1</span><span class="chip p">Admin</span>
+        <span class="l">Reports</span><b>10</b><span class="to">→ 1</span><span class="chip t">Reports</span>
+        <span class="l">Calendars</span><b>4</b><span class="to">→ 1</span><span class="chip p">Admin</span>
+        <span class="l">Permissions</span><b>3</b><span class="to">→ 1</span><span class="chip p">Admin</span>
+        <span class="l">Periods</span><b>2</b><span class="to">→ 1</span><span class="chip p">Admin</span>
       </div>
       <p style="margin-top:16px;font-size:15px;color:var(--ink3)">Counted on the current-state sitemap: each menu item that opens user, report, calendar, permission or period screens.</p>
     </div>
@@ -214,9 +214,9 @@ ol.decide li{margin:12px 0;color:var(--ink2)}ol.decide li b{color:var(--ink)}
   <div class="kicker">What changes for people</div>
   <h2>Each persona's question has one place to look.</h2>
   <div class="cols c3" style="margin-top:10px;align-items:start">
-    <div class="card persona"><div class="who" style="margin-top:0;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)">Accountant</div><div class="q">What remains, when is it due, and where do I act?</div><ul><li>Home opens on my work across modules, with favorites and notices.</li><li>The prepare, review and approve lists stay exactly as they are, inside Reconciliations.</li><li>Journal Entries is a top-level area instead of a side-menu item.</li><li>SmartMatch's two-grid layout and the dense tables are untouched.</li></ul></div>
-    <div class="card persona m"><div class="who" style="margin-top:0;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)">Accounting manager</div><div class="q">Where does work need attention, and who can move it forward?</div><ul><li>One area for status across Certification, Close and Match.</li><li>Accounts, assignments, change requests and decertifications together.</li><li>Reports in one area, with the binders.</li></ul></div>
-    <div class="card persona a"><div class="who" style="margin-top:0;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)">Financial systems administrator</div><div class="q">What must be set up, changed or resolved for work to continue?</div><ul><li>Users and access in one place, grouped as users, groups, profiles, and permissions and roles.</li><li>Calendars, imports, ERP and bank setup collected from three modules.</li><li>Module configuration stays per module, all under Settings.</li></ul></div>
+    <div class="card persona"><div class="who" style="margin-top:0;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)">Accountant</div><div class="q">What remains, when is it due, and where do I act?</div><ul><li>Home is the Florence landing page: favorites, my tasks, documents and helpful links, news.</li><li>The prepare, review and approve lists stay exactly as they are, inside Reconciliations.</li><li>Journal Entries is a top-level area instead of a side-menu item.</li><li>SmartMatch's two-grid layout and the dense tables are untouched; Matching keeps its tabs on the page.</li></ul></div>
+    <div class="card persona m"><div class="who" style="margin-top:0;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)">Accounting manager</div><div class="q">Where does work need attention, and who can move it forward?</div><ul><li>The reconciliation, Close and journal entry status views sit inside each area; the landing page links to them.</li><li>Accounts, assignments and change requests sit with the module admin; a manager who holds that role finds them under Admin › Modules.</li><li>Reports in one tab.</li></ul></div>
+    <div class="card persona a"><div class="who" style="margin-top:0;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)">Administrators</div><div class="q">What must be set up, changed or resolved for work to continue?</div><ul><li>User admins: Users, Templates and Access, as in the User Management prototype.</li><li>System admins: organization, calendars and periods, data and integrations, application, notices and documents.</li><li>Module admins: each module's configuration, plus its accounts, entities and tasks.</li></ul></div>
   </div>
   <div class="cols c2" style="margin-top:22px">
     <div class="card"><h3>Kept on purpose</h3><p>The role lists, the reconciliation record, SmartMatch, Close Home, and Compliance's internal structure. The assessment names these as strengths, so the redesign moves them rather than replacing them.</p></div>
@@ -236,7 +236,7 @@ ol.decide li{margin:12px 0;color:var(--ink2)}ol.decide li b{color:var(--ink)}
       <div class="card">
         <h3>Decisions</h3>
         <ol class="decide">
-          <li><b>Is Management a tab or a role view?</b> Visible to everyone, or only to people with manager or administrator rights.</li>
+          <li><b>Which admin owns accounts, entities and tasks?</b> Drawn under the module admin; the system admin, who holds calendars and periods, is the alternative. Brooke's dashboard research can settle it.</li>
           <li><b>Is QA review part of Reconciliations or its own area?</b> QA review is the sample check an admin or QA reviewer runs on certified reconciliations.</li>
         </ol>
       </div>
@@ -254,7 +254,7 @@ ol.decide li{margin:12px 0;color:var(--ink2)}ol.decide li b{color:var(--ink)}
     </div>
   </div>
   </div>
-  <div class="foot"><a href="mockup.html">Click through the structure in today's Cadency look</a><a href="nav-redesign-draft.html">Full mapping, reasons and open questions</a><a href="https://www.figma.com/board/OrlyDEaz9z56cSYLQK0pqV/-Internal--Trintech-Discovery-Board?node-id=2692-3631">Proposed sitemap on the board</a></div>
+  <div class="foot"><a href="mockup.html">Click through the structure in today's Cadency look</a><a href="compare.html">Before and after, module by module</a><a href="nav-redesign-draft.html">Full mapping, reasons and open questions</a><a href="https://www.figma.com/board/OrlyDEaz9z56cSYLQK0pqV/-Internal--Trintech-Discovery-Board?node-id=2692-3631">Proposed sitemap on the board (Nov 20 cut, before Admin was split by role)</a></div>
 </section>
 
 <script>
